@@ -43,6 +43,19 @@
 				margin-top: 5rem;
 				margin-left: 10rem;
 			}
+			button {
+				padding: 3px 6px;
+				border-radius: 10px;
+				cursor: pointer;
+				background-color: blue;
+				color: white;
+				border: none;
+				font-size: large;
+				font-weight: 600;
+				position: absolute;
+				bottom: 10;
+				right: 3;
+			}
 		</style>
 	</head>
 	<body>
@@ -67,9 +80,28 @@
             </div>
             <div class="chatbox__messages">
                 <div></div>
+
             </div>
+						<div id="symbols" style="
+						width: 95%;
+    height: auto;
+    background: #747474;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    left: 0;
+		margin:auto
+		"
+class="remove"
+		>
+		<div id="myicons" style="display:flex; flex-wrap:wrap; padding:20px">
+
+		</div>
+
+	</div>
             <div class="chatbox__footer">
-                <input type="text" placeholder="Write a message...">
+								<a href="#" id="iconbutton" style="margin-right:5px"><img width="20px" src="{{ url_for('static', filename='images/up.png') }}" /></a>
+								<div class="input" id="input"><span id="iccontent" class="input firstinput" contenteditable="true" > </span></div>
                 <button class="chatbox__send--footer send__button">Send</button>
             </div>
         </div>
@@ -80,5 +112,8 @@
     </div>
 	</body>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/emoti.js') }}"></script>
+
 
 </html>

@@ -78,6 +78,28 @@ font-weight: 100;
     overflow-y: scroll;
     flex-direction: column-reverse;
 }
+.remove{
+  display:none
+}
+.chatbox__messages sub, .chatbox__messages sup{
+  margin-right: 3px;
+  margin-left:3px;
+}
+#symbols sub,#symbols sup{
+  font-size: 16px;
+}
+.iconse{
+  min-width: 45px;
+
+      height: 35px;
+      background: #fff;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin: 5px;
+      cursor: pointer;
+
+}
 
 .messages__item {
     background: orange;
@@ -179,13 +201,32 @@ box-shadow: var(--primaryBoxShadow);
     border-bottom-left-radius: 10px;
     margin-top: 20px;
 }
+.otherinput{
+      padding: 3px 0px 6px 0px!important;
+}
+.firstinput{
+    padding: 6px 0px 6px 10px !important;
+}
+div.input{
+display:flex;
+flex-wrap: nowrap;
+    white-space: nowrap;
+background: aliceblue;
+width: 100%;
+max-width: 275px;
+overflow: scroll;
+}
+.chatbox__footer .input {
 
-.chatbox__footer input {
-    width: 80%;
     border: none;
-    padding: 10px 10px;
-    border-radius: 30px;
+    padding: 6px 5px;
     text-align: left;
+
+}
+
+span.input[contenteditable] {
+  width: auto;
+  outline: 0px solid transparent;
 }
 
 .chatbox__send--footer {

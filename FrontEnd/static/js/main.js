@@ -17,7 +17,7 @@ class Chatbox {
 
         sendButton.addEventListener('click', () => this.onSendButton(chatBox))
 
-        const node = chatBox.querySelector('input');
+        const node = chatBox.querySelector('.input');
         node.addEventListener("keyup", ({key}) => {
             if (key === "Enter") {
                 this.onSendButton(chatBox)
@@ -37,8 +37,15 @@ class Chatbox {
     }
 
     onSendButton(chatbox) {
-        var textField = chatbox.querySelector('input');
-        let text1 = textField.value
+        var textField = chatbox.querySelectorAll('#iccontent');
+        console.log(textField);
+        let text1 = ''
+        for (let i = 0; i < textField.length; i++) {
+          var a = textField[i].innerHTML.replace('"true"','"false"');
+          text1 += a
+              }
+
+
         if (text1 === "") {
             return;
         }
@@ -59,12 +66,12 @@ class Chatbox {
             let msg2 = { name: "Sam", message: r.answer };
             this.messages.push(msg2);
             this.updateChatText(chatbox)
-            textField.value = ''
+            $('div.input').html('<span id="iccontent" class="input firstinput" contenteditable="true" > </span>')
 
         }).catch((error) => {
             console.error('Error:', error);
             this.updateChatText(chatbox)
-            textField.value = ''
+            $('div.input').html('<span id="iccontent" class="input firstinput" contenteditable="true" > </span>')
           });
     }
 
