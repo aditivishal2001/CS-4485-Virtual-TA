@@ -1,0 +1,40 @@
+{
+    "Response":[
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hey",
+                "Hello",
+                "I have a question"
+            ],
+            "responses": [
+                "Hello, How can I help you?"
+            ]
+        },
+        {
+            "tag": "Thanks",
+            "patterns": [
+                "Thank you",
+                "See you later"
+            ],
+            "responses": [
+                "Anything else I can help you with",
+                "Have a nice day"
+            ]
+        },
+        {
+            "tag": "email",
+            "patterns": [
+                "What is the email of the TA?",
+                "What is the email of the Professor?",
+                "What is the Professor's email?",
+                "What is the TA's email?"
+            ],
+            "responses": [
+                "Professor's email is anjum.chida@utdallas.edu",
+                "TA's email is "
+            ]
+        }
+    ]
+}
