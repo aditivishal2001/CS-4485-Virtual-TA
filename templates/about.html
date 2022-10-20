@@ -1,0 +1,25 @@
+<style>
+	.wrapper {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		width: 50%;
+	}
+
+	.wrapper p {
+		letter-spacing: 0.5;
+		font-weight: 400;
+		margin-left: 4px;
+		font-size: large;
+	}
+</style>
+
+{% extends 'base.html' %} {% block content %}
+<h1>{% block title %} about the assignment {% endblock %}</h1>
+<div class="wrapper">
+	<p>
+		As class sizes continue to increase at UTD, it is challenging to answer
+		student questions in timely manner by class instructors and teaching
+		assistants. The chat bot is designed to answer students questions
+	</p>
+</div>
+{% endblock %}
