@@ -12,7 +12,8 @@ Run the project:
 3)	run app.py
 4)	go to http://127.0.0.1:5000/ (it may very please look in ide output)
 
-FAQ
+So what is the logic for the bot calculation for math and how it answers to question asked by student?
+Basic logic explained.
 So how does calculation and chatbot works?
 For ln, log and stuff to make them look the way it is and make them editable on form field I used the attribute contenteditable on HTML then with javascript I was able to move them from the selection are to the form field area
 
