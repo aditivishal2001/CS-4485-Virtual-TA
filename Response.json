@@ -35,6 +35,22 @@
                 "Professor's email is anjum.chida@utdallas.edu",
                 "TA's email is "
             ]
+        },
+        {
+            "tag": "Dijkstra",
+            'patterns": [
+                "What situation should Dijkstra's Algorithmn be used in?",
+                "Does Dijkstra's algorithm work with negative weights?",
+                "What technique is used for Dijkstra's algorithm?",
+                "What are the limitations of Dijkstra's?",
+                "What is the time complexity of Dijkstra's?",
+                "Why is Dijkstra's a greedy algorithm?",
+                "Does Dijkstra's algorithm work in all cases?"
+            ],
+            "responses": [
+                Dijkstra's algorithm is one of the most popular algorithms for solving single-source shortest path 
+                problems such as finding the shortest distance between two vertices on a graph."
+            ]
         }
     ]
 }
