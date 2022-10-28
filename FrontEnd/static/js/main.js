@@ -1,3 +1,4 @@
+let contor = 0;
 class Chatbox {
     constructor() {
         this.args = {
@@ -17,12 +18,13 @@ class Chatbox {
 
         sendButton.addEventListener('click', () => this.onSendButton(chatBox))
 
-        const node = chatBox.querySelector('.input');
-        node.addEventListener("keyup", ({key}) => {
-            if (key === "Enter") {
-                this.onSendButton(chatBox)
-            }
-        })
+        // const node = chatBox.querySelector('.input');
+        // node.addEventListener("keyup", ({key}) => {
+        //     if (key === "Enter") {
+        //       return false
+        //         // this.onSendButton(chatBox)
+        //     }
+        // })
     }
 
     toggleState(chatbox) {
@@ -31,6 +33,15 @@ class Chatbox {
         // show or hides the box
         if(this.state) {
             chatbox.classList.add('chatbox--active')
+            if(contor == 0)
+          {
+            let greeting = { name: "Sam", message: 'Hi how I can help you ?' };
+            this.messages.push(greeting);
+            this.updateChatText(chatbox)
+            $('div.input').html('<span id="iccontent" class="input firstinput" contenteditable="true" > </span>')
+            contor+=1;
+          }
+
         } else {
             chatbox.classList.remove('chatbox--active')
         }
@@ -63,6 +74,7 @@ class Chatbox {
           })
           .then(r => r.json())
           .then(r => {
+            console.log(r)
             let msg2 = { name: "Sam", message: r.answer };
             this.messages.push(msg2);
             this.updateChatText(chatbox)
@@ -76,6 +88,7 @@ class Chatbox {
     }
 
     updateChatText(chatbox) {
+        console.log(this.messages)
         var html = '';
         this.messages.slice().reverse().forEach(function(item, index) {
             if (item.name === "Sam")

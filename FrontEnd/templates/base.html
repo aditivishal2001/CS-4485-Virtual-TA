@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
 		<title>{% block title %} {% endblock %} - FlaskApp</title>
+
 		<style>
 			* {
 				padding: 0;
@@ -57,6 +58,7 @@
 				right: 3;
 			}
 		</style>
+
 	</head>
 	<body>
 		<nav>
@@ -101,7 +103,7 @@ class="remove"
 	</div>
             <div class="chatbox__footer">
 								<a href="#" id="iconbutton" style="margin-right:5px"><img width="20px" src="{{ url_for('static', filename='images/up.png') }}" /></a>
-								<div class="input" id="input"><span id="iccontent" class="input firstinput" contenteditable="true" > </span></div>
+								<div class="input" id="input"><span id="iccontent"  class="input firstinput" contenteditable="true" > </span></div>
                 <button class="chatbox__send--footer send__button">Send</button>
             </div>
         </div>
