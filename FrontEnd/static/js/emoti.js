@@ -40,6 +40,10 @@ const addicon = (e) => {
       console.log(e.innerHTML.substring(0,5))
       $('div.input').append('<span style="font-size: 25px;" id="iccontent" class="input otherinput">'+ e.innerHTML.substring(0,5) + '</span><sub style="height: 15px; margin-top: -7px;margin-left: -11px;" contenteditable="true">n</sub><sup style="height: 16px;margin-top: 30px;margin-left: -15px;" contenteditable="true">i=1</sup> <span style="font-size: 25px;">( <span  contenteditable="true">x</span> )</span> <span id="iccontent" class="input" contenteditable="true"> </span>')
   }
+  else if(e.innerHTML === '≤' || e.innerHTML === '≥'){
+
+      $('div.input').append('<span style="font-size: 25px; "  contenteditable="true"> x </span> <span style="font-size: 25px; margin-top:-5px;margin-right:5px; margin-left:5px;" id="iccontent" class="input otherinput">'+ e.innerHTML + '</span><span style="font-size: 25px; "  contenteditable="true"> x </span> <span id="iccontent" class="input" contenteditable="true"> </span>')
+  }
   else{
 
     $('div.input').append('<span style="font-size: 25px;" id="iccontent" class="input otherinput"> '+ e.innerHTML + ' </span><span id="iccontent" class="input" contenteditable="true"> </span>')
