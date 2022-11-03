@@ -1,122 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
-		<title>{% block title %} {% endblock %} - FlaskApp</title>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="static/styles/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<style>
-			* {
-				padding: 0;
-				margin: 0;
-				box-sizing: border-box;
-			}
-			body {
-				background-color: #ff6600;
-				width: 100%;
-			}
-			h1 {
-				font-size: x-large;
-				font-weight: 800;
-				text-transform: capitalize;
-			}
-			nav {
-				background-color: #32612d;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 10px 0;
-				width: 100%;
-				gap: 3rem;
-			}
-			nav a {
-				color: aliceblue;
-				font-size: 18px;
-				text-decoration: underline;
-				padding: 2px 4px;
-				text-transform: capitalize;
-			}
-			nav a:hover {
-				color: #ff6600;
-				text-decoration: solid;
-			}
-			.content {
-				margin-top: 5rem;
-				margin-left: 10rem;
-			}
-			button {
-				padding: 3px 6px;
-				border-radius: 10px;
-				cursor: pointer;
-				background-color: blue;
-				color: white;
-				border: none;
-				font-size: large;
-				font-weight: 600;
-				position: absolute;
-				bottom: 10;
-				right: 3;
-			}
-		</style>
+    <title>FlaskApp</title>
+    <style>
+      h2 {
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrapper-center {
+        margin-top: 4px;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .wrapper-center h4 {
+        font-size: larger;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 4px;
+      }
+      .wrapper-center h6 {
+        font-size: larger;
+        color: #301934;
+        font-weight: 500;
+      }
+      .wrapper-center p {
+        margin-top: 2rem;
+        font-size: large;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+    </style>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #ff6600;
+        width: 100%;
+      }
+      h1 {
+        font-size: x-large;
+        font-weight: 800;
+        text-transform: capitalize;
+      }
+      nav {
+        background-color: #32612d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        width: 100%;
+        gap: 3rem;
+      }
+      nav a {
+        color: aliceblue;
+        font-size: 18px;
+        text-decoration: underline;
+        padding: 2px 4px;
+        text-transform: capitalize;
+      }
+      nav a:hover {
+        color: #ff6600;
+        text-decoration: solid;
+      }
+      .content {
+        margin-top: 5rem;
+        margin-left: 10rem;
+      }
+      button {
+        padding: 3px 6px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+        border: none;
+        font-size: large;
+        font-weight: 600;
+        position: absolute;
+        bottom: 10px !important;
+        right: 3px !important;
+      }
 
-	</head>
-	<body>
-		<nav>
-			<a href="{{ url_for('home') }}">Home</a>
-			<a href="{{ url_for('contact') }}">Contact us</a>
-			<a href="{{ url_for('resources') }}">Resources</a>
-			<a href="{{ url_for('about') }}">About the project</a>
-			
-		</nav>
-		<hr />
-		<div class="content">{% block content %} {% endblock %}</div>
-		<div class="chatbox">
-        <div class="chatbox__support">
-            <div class="chatbox__header">
-                <div class="chatbox__image--header">
-                    <img width="50px" src="{{ url_for('static', filename='images/avatar.png') }}" alt="image">
-                </div>
-                <div class="chatbox__content--header">
-                    <h4 class="chatbox__heading--header">virtual TA</h4>
-                    <p class="chatbox__description--header">How can I help you?</p>
-                </div>
-            </div>
-            <div class="chatbox__messages">
-                <div></div>
+      #symbols {
+        width: 95%;
+        height: auto;
+        background: #747474;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
+      }
 
-            </div>
-						<div id="symbols" style="
-						width: 95%;
-    height: auto;
-    background: #747474;
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    left: 0;
-		margin:auto
-		"
-class="remove"
-		>
-		<div id="myicons" style="display:flex; flex-wrap:wrap; padding:20px">
-
-		</div>
-
-	</div>
-            <div class="chatbox__footer">
-								<a href="#" id="iconbutton" style="margin-right:5px"><img width="20px" src="{{ url_for('static', filename='images/up.png') }}" /></a>
-								<div class="input" id="input"><span id="iccontent"  class="input firstinput" contenteditable="true" > </span></div>
-                <button class="chatbox__send--footer send__button">Send</button>
-            </div>
-        </div>
-        <div class="chatbox__button">
-					<button id="virtualtabtn"><img width="30" src="{{ url_for('static', filename='images/chat.png') }}" /> Chat Virtual TA here</button>
-            <!-- <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button> -->
-        </div>
+      @media screen and (max-width: 767px) {
+        #symbols {
+          bottom: 120px;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        #symbols {
+          bottom: 105px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+    <hr />
+    <div class="content">
+      <h2>Home Welcome to the Virtual TA!</h2>
+      <div class="wrapper-center">
+        <h4>CS 4349 Advanced Algorithm Design and Analysis</h4>
+        <h6>Anjum Chida</h6>
+        <p>
+          To begin chatting with the TA, click the button at the button at the
+          bottom right of the screen
+        </p>
+      </div>
     </div>
-	</body>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/emoti.js') }}"></script>
+    <div class="chatbox">
+      <div class="chatbox__support">
+        <div class="chatbox__header">
+          <div class="chatbox__image--header">
+            <img width="50px" src="static/images/avatar.png" alt="image" />
+          </div>
+          <div class="chatbox__content--header">
+            <h4 class="chatbox__heading--header">virtual TA</h4>
+            <p class="chatbox__description--header">How can I help you?</p>
+          </div>
+        </div>
+        <div class="chatbox__messages">
+          <div></div>
+        </div>
+        <div id="symbols" style="" class="remove">
+          <div
+            id="myicons"
+            style="display: flex; flex-wrap: wrap; padding: 20px"
+          ></div>
+        </div>
 
-
+        <div class="chatbox__footer" style="text-align: end">
+          <a
+            href="#"
+            id="clean"
+            style="margin-right: 50px; color: white; text-decoration: none"
+            >clean</a
+          >
+          <div class="chatboxfooter">
+            <a href="#" id="iconbutton" style="margin-right: 5px"
+              ><img width="20px" src="static/images/up.png"
+            /></a>
+            <div class="input" id="input">
+              <span
+                id="iccontent"
+                class="input firstinput"
+                contenteditable="true"
+              >
+              </span>
+            </div>
+            <button class="chatbox__send--footer send__button">Send</button>
+          </div>
+        </div>
+      </div>
+      <div class="chatbox__button">
+        <button id="virtualtabtn">
+          <img width="30" src="static/images/chat.png" /> Chat Virtual TA here
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const check_open = document.getElementById("virtualtabtn");
+  </script>
+  <script type="text/javascript" src="static/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="static/js/emoti.js"></script>
 </html>

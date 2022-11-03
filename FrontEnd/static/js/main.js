@@ -53,6 +53,7 @@ class Chatbox {
         let text1 = ''
         for (let i = 0; i < textField.length; i++) {
           var a = textField[i].innerHTML.replace('"true"','"false"');
+
           text1 += a
               }
 
