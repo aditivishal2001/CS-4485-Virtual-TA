@@ -1,0 +1,721 @@
+Last login: Wed Nov  2 23:07:43 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Aditi:~ aditivishal2001$ ssh generic@csa-4485-08.utdallas.edu
+generic@csa-4485-08.utdallas.edu's password: 
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Thu Nov  3 00:59:16 2022 from 10.50.123.72
+[generic@csa-4485-08 ~]$ apache2 -v
+bash: apache2: command not found...
+[generic@csa-4485-08 ~]$ apache -v
+bash: apache: command not found...
+[generic@csa-4485-08 ~]$ service httpd start
+Redirecting to /bin/systemctl start httpd.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'httpd.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password: 
+==== AUTHENTICATION COMPLETE ====
+[generic@csa-4485-08 ~]$ service apache2 start
+Redirecting to /bin/systemctl start apache2.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'apache2.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password: 
+polkit-agent-helper-1: pam_authenticate failed: Authentication failure
+==== AUTHENTICATION FAILED ====
+Failed to start apache2.service: Access denied
+See system logs and 'systemctl status apache2.service' for details.
+[generic@csa-4485-08 ~]$ service apache2 start
+Redirecting to /bin/systemctl start apache2.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'apache2.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password: 
+==== AUTHENTICATION COMPLETE ====
+Failed to start apache2.service: Unit apache2.service not found.
+[generic@csa-4485-08 ~]$ sudo systemctl start apache2
+Failed to start apache2.service: Unit apache2.service not found.
+[generic@csa-4485-08 ~]$ service httpd start
+Redirecting to /bin/systemctl start httpd.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'httpd.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password: 
+==== AUTHENTICATION COMPLETE ====
+[generic@csa-4485-08 ~]$ httpd -v
+Server version: Apache/2.4.37 (AlmaLinux)
+Server built:   Jun 22 2022 07:12:01
+[generic@csa-4485-08 ~]$ sudo systemctl enable apache2
+Failed to enable unit: Unit file apache2.service does not exist.
+[generic@csa-4485-08 ~]$ sudo mv /var/www/html/index.html /var/www/html/index.html.bak
+mv: cannot stat '/var/www/html/index.html': No such file or directory
+[generic@csa-4485-08 ~]$ sudo systemctl start httpd
+[generic@csa-4485-08 ~]$ sudo systemctl status httpd
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor prese>
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days>
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.0022>
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port >
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port >
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port >
+lines 2-24
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:  >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+lines 2-24
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+lines 2-24
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+lines 2-24
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+lines 2-25
+
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+lines 2-26
+
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+lines 2-27
+
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+~
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+~
+~
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+~
+~
+~
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+~
+~
+~
+~
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+~
+~
+~
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+~
+~
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+~
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+~
+lines 2-27/27 (END)
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 10057; Idle/Busy workers 100/0;Requests/sec: 0.00228; Bytes served/sec:   9 >
+    Tasks: 279 (limit: 49148)
+   Memory: 42.2M
+   CGroup: /system.slice/httpd.service
+           ├─  1077 /usr/sbin/httpd -DFOREGROUND
+           ├─599572 /usr/sbin/httpd -DFOREGROUND
+           ├─599573 /usr/sbin/httpd -DFOREGROUND
+           ├─599574 /usr/sbin/httpd -DFOREGROUND
+           ├─599575 /usr/sbin/httpd -DFOREGROUND
+           ├─599576 /usr/sbin/httpd -DFOREGROUND
+           └─701318 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+
+[generic@csa-4485-08 ~]$ hostname -i
+10.176.67.71
+[generic@csa-4485-08 ~]$ Connection to csa-4485-08.utdallas.edu closed by remote host.
+Connection to csa-4485-08.utdallas.edu closed.
+Aditi:~ aditivishal2001$ ssh generic@csa-4485-08.utdallas.edu
+generic@csa-4485-08.utdallas.edu's password: 
+Web console: https://csa-4485-08.utdallas.edu:9090/ or https://10.176.67.71:9090/
+
+Last login: Thu Nov  3 10:32:30 2022 from 10.50.123.72
+[generic@csa-4485-08 ~]$ client_loop: send disconnect: Broken pipe
+Aditi:~ aditivishal2001$ ssh generic@csa-4485-08.utdallas.edu
+generic@csa-4485-08.utdallas.edu's password: 
+Web console: https://csa-4485-08.utdallas.edu:9090/ or https://10.176.67.71:9090/
+
+Last login: Thu Nov  3 10:49:25 2022 from 10.50.120.186
+[generic@csa-4485-08 ~]$ service httpd start
+Redirecting to /bin/systemctl start httpd.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'httpd.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password: 
+==== AUTHENTICATION COMPLETE ====
+[generic@csa-4485-08 ~]$ hostname -i
+10.176.67.71
+[generic@csa-4485-08 ~]$ cd /var/www/html
+[generic@csa-4485-08 html]$ ls
+[generic@csa-4485-08 html]$ cd index.html
+-bash: cd: index.html: No such file or directory
+[generic@csa-4485-08 html]$ ls
+[generic@csa-4485-08 html]$ cd
+[generic@csa-4485-08 ~]$ ls
+ apt.deb   output   test.txt  'w!'
+[generic@csa-4485-08 ~]$ a2dissite 000-default
+bash: a2dissite: command not found...
+
+[generic@csa-4485-08 ~]$ 
+[generic@csa-4485-08 ~]$ cd /var/www/html/index.html
+-bash: cd: /var/www/html/index.html: No such file or directory
+[generic@csa-4485-08 ~]$  cd /var/www/html
+[generic@csa-4485-08 html]$ cd
+[generic@csa-4485-08 ~]$ service apache2 reload
+Redirecting to /bin/systemctl reload apache2.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to reload 'apache2.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password: 
+==== AUTHENTICATION COMPLETE ====
+Failed to reload apache2.service: Unit apache2.service not found.
+[generic@csa-4485-08 ~]$ systemctl reload apache2
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to reload 'apache2.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password: 
+==== AUTHENTICATION COMPLETE ====
+Failed to reload apache2.service: Unit apache2.service not found.
+[generic@csa-4485-08 ~]$ client_loop: send disconnect: Broken pipe
+Aditi:~ aditivishal2001$ ssh generic@csa-4485-08.utdallas.edu
+generic@csa-4485-08.utdallas.edu's password: 
+Web console: https://csa-4485-08.utdallas.edu:9090/ or https://10.176.67.71:9090/
+
+Last login: Thu Nov  3 14:04:43 2022 from 10.50.120.186
+[generic@csa-4485-08 ~]$ systemctl status apache2
+Unit apache2.service could not be found.
+[generic@csa-4485-08 ~]$ apt install apache2
+bash: apt: command not found...
+[generic@csa-4485-08 ~]$ sudo yum install apache2
+Last metadata expiration check: 3:11:52 ago on Thu 03 Nov 2022 02:14:17 PM CDT.
+No match for argument: apache2
+Error: Unable to find a match: apache2
+[generic@csa-4485-08 ~]$ apache2
+bash: apache2: command not found...
+[generic@csa-4485-08 ~]$ ls
+ apt.deb   output   test.txt  'w!'
+[generic@csa-4485-08 ~]$ cd apt.deb
+-bash: cd: apt.deb: Not a directory
+[generic@csa-4485-08 ~]$ cd /etc/apache2
+-bash: cd: /etc/apache2: No such file or directory
+[generic@csa-4485-08 ~]$ service httpd start
+Redirecting to /bin/systemctl start httpd.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'httpd.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password: 
+==== AUTHENTICATION COMPLETE ====
+[generic@csa-4485-08 ~]$ service apache2 start
+Redirecting to /bin/systemctl start apache2.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'apache2.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password: 
+==== AUTHENTICATION COMPLETE ====
+Failed to start apache2.service: Unit apache2.service not found.
+[generic@csa-4485-08 ~]$ apache2 -v
+bash: apache2: command not found...
+[generic@csa-4485-08 ~]$ httpd -v
+Server version: Apache/2.4.37 (AlmaLinux)
+Server built:   Jun 22 2022 07:12:01
+[generic@csa-4485-08 ~]$ client_loop: send disconnect: Broken pipe
+Aditi:~ aditivishal2001$ 
