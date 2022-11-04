@@ -1,0 +1,2007 @@
+Script started on 2022-11-03 00:16:40-05:00
+]0;generic@csa-4485-08:~[generic@csa-4485-08 ~]$ [K[generic@csa-4485-08 ~]$ [K[generic@csa-4485-08 ~]$ ^C
+]0;generic@csa-4485-08:~[generic@csa-4485-08 ~]$ cat /etc/centos-release
+AlmaLinux release 8.6 (Sky Tiger)
+]0;generic@csa-4485-08:~[generic@csa-4485-08 ~]$ rpm â€“qa centos-release 
+RPM version 4.14.3
+Copyright (C) 1998-2002 - Red Hat, Inc.
+This program may be freely redistributed under the terms of the GNU GPL
+
+Usage: rpm [-afgpcdLAlsiv?] [-a|--all] [-f|--file] [--path] [-g|--group] [-p|--package] [--pkgid] [--hdrid]
+        [--triggeredby] [--whatconflicts] [--whatrequires] [--whatobsoletes] [--whatprovides] [--whatrecommends]
+        [--whatsuggests] [--whatsupplements] [--whatenhances] [--nomanifest] [-c|--configfiles] [-d|--docfiles]
+        [-L|--licensefiles] [-A|--artifactfiles] [--dump] [-l|--list] [--queryformat=QUERYFORMAT] [-s|--state]
+        [--nofiledigest] [--nofiles] [--nodeps] [--noscript] [--allfiles] [--allmatches] [--badreloc]
+        [-e|--erase=<package>+] [--excludedocs] [--excludepath=<path>] [--force] [-F|--freshen=<packagefile>+]
+        [-h|--hash] [--ignorearch] [--ignoreos] [--ignoresize] [--noverify] [-i|--install] [--justdb] [--nodeps]
+        [--nofiledigest] [--nocontexts] [--nocaps] [--noorder] [--noscripts] [--notriggers] [--oldpackage] [--percent]
+        [--prefix=<dir>] [--relocate=<old>=<new>] [--replacefiles] [--replacepkgs] [--test]
+        [-U|--upgrade=<packagefile>+] [--reinstall=<packagefile>+] [-D|--define='MACRO EXPR'] [--undefine=MACRO]
+        [-E|--eval='EXPR'] [--target=CPU-VENDOR-OS] [--macros=<FILE:...>] [--noplugins] [--nodigest] [--nosignature]
+        [--rcfile=<FILE:...>] [-r|--root=ROOT] [--dbpath=DIRECTORY] [--querytags] [--showrc] [--quiet] [-v|--verbose]
+        [--version] [-?|--help] [--usage] [--scripts] [--setperms] [--setugids] [--setcaps] [--restore] [--conflicts]
+        [--obsoletes] [--provides] [--requires] [--recommends] [--suggests] [--supplements] [--enhances] [--info]
+        [--changelog] [--changes] [--xml] [--triggers] [--filetriggers] [--last] [--dupes] [--filesbypkg]
+        [--fileclass] [--filecolor] [--fileprovide] [--filerequire] [--filecaps]
+]0;generic@csa-4485-08:~[generic@csa-4485-08 ~]$ rpm â€“qa centos-release cat /etc/centos-release[14Psudo dpkgapt-get updatenano /etc/apt/sources.list[K apt install[1Pupdate-get -y install apt-file[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Capt[Ksudopkexec dpkg -i apt.deb[2Psudo[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[75@wget http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.0.1ubuntu2.17_amd64.deb -O[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Capt ls[K[Ksudo apt[K lsapt update[4Papt installupdate && apt upgradeuname -a[Kinstall --version[3Phelp[2Psudo installapt-get installupgrade[1Pdatepwd[Kinstall sudosudo apt install apache2[4@-get[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kuname -amv[4Pexitpasswd[2Pexit[K[K[K[Ksudo dnf install httpd
+Last metadata expiration check: 0:30:16 ago on Thu 03 Nov 2022 12:01:30 AM CDT.
+Package httpd-2.4.37-47.module_el8.6.0+2935+fb177b09.2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+]0;generic@csa-4485-08:~[generic@csa-4485-08 ~]$ sudo dnf install httpd[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksudo firewall-cmd --permanent --add-service=https
+success
+es of SOURCE files
+                        to corresponding destination files
+  -s, --strip         strip symbol tables
+      --strip-program=PROGRAM  program used to strip binaries
+  -S, --suffix=SUFFIX  override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory  treat DEST as a normal file
+  -v, --verbose       print the name of each directory as it is created
+  -P, --preserve-context  preserve SELinux security context (-P deprecated)
+  -Z                      set SELinux security context of destination
+                            file and each created directory to default type
+      --context[=CTX]     like -Z, or if CTX is specified then set the
+                            SELinux or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/install>
+or available locally via: info '(coreutils) install invocation'
+[generic@csa-4485-08 ~]$ mkdir output
+mkdir: cannot create directory ‘output’: File exists
+[generic@csa-4485-08 ~]$ ls
+apt.deb  output
+[generic@csa-4485-08 ~]$ cd output
+-bash: cd: output: Not a directory
+[generic@csa-4485-08 ~]$ sudo
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-AknS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-AknS] [-g group] [-h host] [-p prompt] [-U user] [-u user] [command]
+usage: sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-T timeout] [-u user] [VAR=value]
+            [-i|-s] [<command>]
+usage: sudo -e [-AknS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-T timeout] [-u user] file ...
+[generic@csa-4485-08 ~]$ ~
+-bash: /home/generic: Is a directory
+[generic@csa-4485-08 ~]$ cd ~
+[generic@csa-4485-08 ~]$ ls
+apt.deb  output
+[generic@csa-4485-08 ~]$ cd /
+[generic@csa-4485-08 /]$ cd .
+[generic@csa-4485-08 /]$ ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[generic@csa-4485-08 /]$ cd ~
+[generic@csa-4485-08 ~]$ ls
+apt.deb  output
+[generic@csa-4485-08 ~]$ apt-get check
+bash: apt-get: command not found...
+[generic@csa-4485-08 ~]$ sudo dpkg -t apt.deb
+sudo: dpkg: command not found
+[generic@csa-4485-08 ~]$ ./apt.deb --help
+[generic@csa-4485-08 ~]$ --help
+bash: --help: command not found...
+[generic@csa-4485-08 ~]$ hostnamectl
+   Static hostname: csa-4485-08
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: fad72f8fecdd44b4bba66903ae5ea8ac
+           Boot ID: b0c653bc45584a10924593b98ad0c409
+    Virtualization: vmware
+  Operating System: AlmaLinux 8.6 (Sky Tiger)
+       CPE OS Name: cpe:/o:almalinux:almalinux:8::baseos
+            Kernel: Linux 4.18.0-372.19.1.el8_6.x86_64
+      Architecture: x86-64
+[generic@csa-4485-08 ~]$ ^C
+[generic@csa-4485-08 ~]$ apt-get --help
+bash: apt-get: command not found...
+[generic@csa-4485-08 ~]$ mock -h
+bash: mock: command not found...
+Install package 'mock' to provide command 'mock'? [N/y] n
+
+
+[generic@csa-4485-08 ~]$ get-apt
+bash: get-apt: command not found...
+[generic@csa-4485-08 ~]$ mock
+bash: mock: command not found...
+Install package 'mock' to provide command 'mock'? [N/y] y
+
+
+ * Waiting in queue...
+The following packages have to be installed:
+ createrepo_c-0.17.7-5.el8.x86_64       Creates a common metadata repository
+ createrepo_c-libs-0.17.7-5.el8.x86_64  Library for repodata manipulation
+ distribution-gpg-keys-1.77-1.el8.noarch        GPG keys of various Linux distri                                              butions
+ drpm-0.4.1-3.el8.x86_64        A library for making, reading and applying delta                                              rpm packages
+ mock-3.0-1.el8.noarch  Builds packages inside chroots
+ mock-core-configs-37.7-1.el8.noarch    Mock core config files basic chroots
+ mock-filesystem-3.0-1.el8.noarch       Mock filesystem layout
+ python3-babel-2.5.1-7.el8.noarch       Library for internationalizing Python ap                                              plications
+ python3-distro-1.4.0-2.module_el8.5.0+2569+5c5719bc.noarch     Linux Distributi                                              on - a Linux OS platform information API
+ python3-jinja2-2.10.1-3.el8.noarch     General purpose template engine for pyth                                              on3
+ python3-markupsafe-0.23-19.el8.x86_64  Implements a XML/HTML/XHTML Markup safe                                               string for Python 3
+ python3-pyroute2-0.5.3-3.el8.noarch    Pure Python netlink library
+ python3-templated-dictionary-1.1-1.el8.noarch  Dictionary with Jinja2 expansion
+Proceed with changes? [N/y] y
+
+
+ * Waiting in queue...
+ * Waiting for authentication... Failed to install packages: Failed to obtain au                                              thentication.
+
+[generic@csa-4485-08 ~]$ sudo install mock
+install: missing destination file operand after 'mock'
+Try 'install --help' for more information.
+[generic@csa-4485-08 ~]$ sudo mock
+sudo: mock: command not found
+[generic@csa-4485-08 ~]$ mock
+bash: mock: command not found...
+Install package 'mock' to provide command 'mock'? [N/y] y
+
+
+ * Waiting in queue...
+The following packages have to be installed:
+ createrepo_c-0.17.7-5.el8.x86_64       Creates a common metadata repository
+ createrepo_c-libs-0.17.7-5.el8.x86_64  Library for repodata manipulation
+ distribution-gpg-keys-1.77-1.el8.noarch        GPG keys of various Linux distributions
+ drpm-0.4.1-3.el8.x86_64        A library for making, reading and applying deltarpm pack                                      ages
+ mock-3.0-1.el8.noarch  Builds packages inside chroots
+ mock-core-configs-37.7-1.el8.noarch    Mock core config files basic chroots
+ mock-filesystem-3.0-1.el8.noarch       Mock filesystem layout
+ python3-babel-2.5.1-7.el8.noarch       Library for internationalizing Python applicatio                                      ns
+ python3-distro-1.4.0-2.module_el8.5.0+2569+5c5719bc.noarch     Linux Distribution - a L                                      inux OS platform information API
+ python3-jinja2-2.10.1-3.el8.noarch     General purpose template engine for python3
+ python3-markupsafe-0.23-19.el8.x86_64  Implements a XML/HTML/XHTML Markup safe string f                                      or Python 3
+ python3-pyroute2-0.5.3-3.el8.noarch    Pure Python netlink library
+ python3-templated-dictionary-1.1-1.el8.noarch  Dictionary with Jinja2 expansion
+Proceed with changes? [N/y] y
+
+
+ * Waiting in queue...
+ * Waiting for authentication... Failed to install packages: Failed to obtain authentica                                      tion.
+
+[generic@csa-4485-08 ~]$ hostnamectl
+   Static hostname: csa-4485-08
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: fad72f8fecdd44b4bba66903ae5ea8ac
+           Boot ID: b0c653bc45584a10924593b98ad0c409
+    Virtualization: vmware
+  Operating System: AlmaLinux 8.6 (Sky Tiger)
+       CPE OS Name: cpe:/o:almalinux:almalinux:8::baseos
+            Kernel: Linux 4.18.0-372.19.1.el8_6.x86_64
+      Architecture: x86-64
+[generic@csa-4485-08 ~]$ yum -h
+usage: yum [options] COMMAND
+
+List of Main Commands:
+
+alias                     List or create command aliases
+autoremove                remove all unneeded packages that were originally installed as depend                               encies
+check                     check for problems in the packagedb
+check-update              check for available package upgrades
+clean                     remove cached data
+deplist                   [deprecated, use repoquery --deplist] List package's dependencies and                                what packages provide them
+distro-sync               synchronize installed packages to the latest available versions
+downgrade                 Downgrade a package
+group                     display, or use, the groups information
+help                      display a helpful usage message
+history                   display, or use, the transaction history
+info                      display details about a package or group of packages
+install                   install a package or packages on your system
+list                      list a package or groups of packages
+makecache                 generate the metadata cache
+mark                      mark or unmark installed packages as installed by user.
+module                    Interact with Modules.
+provides                  find what package provides the given value
+reinstall                 reinstall a package
+remove                    remove a package or packages from your system
+repolist                  display the configured software repositories
+repoquery                 search for packages matching keyword
+repository-packages       run commands on top of all packages in given repository
+search                    search package details for the given string
+shell                     run an interactive YUM shell
+swap                      run an interactive YUM mod for remove and install one spec
+updateinfo                display advisories about packages
+upgrade                   upgrade a package or packages on your system
+upgrade-minimal           upgrade, but only 'newest' package match which fixes a problem that a                               ffects your system
+
+List of Plugin Commands:
+
+builddep                  Install build dependencies for package or spec file
+changelog                 Show changelog data of packages
+config-manager            manage yum configuration options and repositories
+copr                      Interact with Copr repositories.
+debug-dump                dump information about installed rpm packages to file
+debug-restore             restore packages recorded in debug-dump file
+debuginfo-install         install debuginfo packages
+download                  Download package to current directory
+groups-manager            create and edit groups metadata file
+needs-restarting          determine updated binaries that need restarting
+playground                Interact with Playground repository.
+repoclosure               Display a list of unresolved dependencies for repositories
+repodiff                  List differences between two sets of repositories
+repograph                 Output a full package dependency graph in dot format
+repomanage                Manage a directory of rpm packages
+reposync                  download all packages from remote repo
+
+General YUM options:
+  -c [config file], --config [config file]
+                        config file location
+  -q, --quiet           quiet operation
+  -v, --verbose         verbose operation
+  --version             show YUM version and exit
+  --installroot [path]  set install root
+  --nodocs              do not install documentations
+  --noplugins           disable all plugins
+  --enableplugin [plugin]
+                        enable plugins by name
+  --disableplugin [plugin]
+                        disable plugins by name
+  --releasever RELEASEVER
+                        override the value of $releasever in config and repo
+                        files
+  --setopt SETOPTS      set arbitrary config and repo options
+  --skip-broken         resolve depsolve problems by skipping packages
+  -h, --help, --help-cmd
+                        show command help
+  --allowerasing        allow erasing of installed packages to resolve
+                        dependencies
+  -b, --best            try the best available package versions in
+                        transactions.
+  --nobest              do not limit the transaction to the best candidate
+  -C, --cacheonly       run entirely from system cache, don't update cache
+  -R [minutes], --randomwait [minutes]
+                        maximum command wait time
+  -d [debug level], --debuglevel [debug level]
+                        debugging output level
+  --debugsolver         dumps detailed solving results into files
+  --showduplicates      show duplicates, in repos, in list/search commands
+  -e ERRORLEVEL, --errorlevel ERRORLEVEL
+                        error output level
+  --obsoletes           enables yum's obsoletes processing logic for upgrade
+                        or display capabilities that the package obsoletes for
+                        info, list and repoquery
+  --rpmverbosity [debug level name]
+                        debugging output level for rpm
+  -y, --assumeyes       automatically answer yes for all questions
+  --assumeno            automatically answer no for all questions
+  --enablerepo [repo]   Enable additional repositories. List option. Supports
+                        globs, can be specified multiple times.
+  --disablerepo [repo]  Disable repositories. List option. Supports globs, can
+                        be specified multiple times.
+  --repo [repo], --repoid [repo]
+                        enable just specific repositories by an id or a glob,
+                        can be specified multiple times
+  --enable              enable repos with config-manager command
+                        (automatically saves)
+  --disable             disable repos with config-manager command
+                        (automatically saves)
+  -x [package], --exclude [package], --excludepkgs [package]
+                        exclude packages by name or glob
+  --disableexcludes [repo], --disableexcludepkgs [repo]
+                        disable excludepkgs
+  --repofrompath [repo,path]
+                        label and path to an additional repository to use
+                        (same path as in a baseurl), can be specified multiple
+                        times.
+  --noautoremove        disable removal of dependencies that are no longer
+                        used
+  --nogpgcheck          disable gpg signature checking (if RPM policy allows)
+  --color COLOR         control whether color is used
+  --refresh             set metadata as expired before running the command
+  -4                    resolve to IPv4 addresses only
+  -6                    resolve to IPv6 addresses only
+  --destdir DESTDIR, --downloaddir DESTDIR
+                        set directory to copy packages to
+  --downloadonly        only download packages
+  --comment COMMENT     add a comment to transaction
+  --bugfix              Include bugfix relevant packages, in updates
+  --enhancement         Include enhancement relevant packages, in updates
+  --newpackage          Include newpackage relevant packages, in updates
+  --security            Include security relevant packages, in updates
+  --advisory ADVISORY, --advisories ADVISORY
+                        Include packages needed to fix the given advisory, in
+                        updates
+  --bz BUGZILLA, --bzs BUGZILLA
+                        Include packages needed to fix the given BZ, in
+                        updates
+  --cve CVES, --cves CVES
+                        Include packages needed to fix the given CVE, in
+                        updates
+  --sec-severity {Critical,Important,Moderate,Low}, --secseverity {Critical,Important,Moderate,                               Low}
+                        Include security relevant packages matching the
+                        severity, in updates
+  --forcearch ARCH      Force the use of an architecture
+[generic@csa-4485-08 ~]$ yum search httpd
+AlmaLinux 8 - BaseOS                                            14 MB/s | 8.1 MB     00:00
+AlmaLinux 8 - AppStream                                         25 MB/s |  12 MB     00:00
+AlmaLinux 8 - Extras                                            74 kB/s |  18 kB     00:00
+AlmaLinux 8 - Plus                                              76 kB/s |  18 kB     00:00
+AlmaLinux 8 - PowerTools                                       7.1 MB/s | 2.9 MB     00:00
+Extra Packages for Enterprise Linux 8 - x86_64                  11 MB/s |  13 MB     00:01
+Extra Packages for Enterprise Linux Modular 8 - x86_64         857 kB/s | 733 kB     00:00
+================================= Name Exactly Matched: httpd =================================
+httpd.x86_64 : Apache HTTP Server
+================================ Name & Summary Matched: httpd ================================
+almalinux-logos-httpd.noarch : AlmaLinux-related icons and pictures used by httpd
+dmlite-apache-httpd.x86_64 : Apache HTTPD frontend for dmlite
+keycloak-httpd-client-install.noarch : Tools to configure Apache HTTPD as Keycloak client
+libmicrohttpd-devel.i686 : Development files for libmicrohttpd
+libmicrohttpd-devel.x86_64 : Development files for libmicrohttpd
+libmicrohttpd-doc.noarch : Documentation for libmicrohttpd
+lighttpd-fastcgi.x86_64 : FastCGI module and spawning helper for lighttpd and PHP configuration
+lighttpd-filesystem.noarch : The basic directory layout for lighttpd
+lighttpd-mod_authn_dbi.x86_64 : Authentication module for lighttpd that uses DBI
+lighttpd-mod_authn_gssapi.x86_64 : Authentication module for lighttpd that uses GSSAPI
+lighttpd-mod_authn_ldap.x86_64 : Authentication module for lighttpd that uses LDAP
+lighttpd-mod_authn_pam.x86_64 : Authentication module for lighttpd that uses PAM
+lighttpd-mod_authn_sasl.x86_64 : Authentication module for lighttpd that uses SASL
+lighttpd-mod_deflate.x86_64 : Compression module for lighttpd
+lighttpd-mod_gnutls.x86_64 : TLS module for lighttpd that uses GnuTLS
+lighttpd-mod_magnet.x86_64 : Lua module for lighttpd
+lighttpd-mod_maxminddb.x86_64 : GeoIP2 module for lighttpd to use for location lookups
+lighttpd-mod_mbedtls.x86_64 : TLS module for lighttpd that uses mbedTLS
+lighttpd-mod_nss.x86_64 : TLS module for lighttpd that uses NSS
+lighttpd-mod_openssl.x86_64 : TLS module for lighttpd that uses OpenSSL
+lighttpd-mod_vhostdb_dbi.x86_64 : Virtual host module for lighttpd that uses DBI
+lighttpd-mod_vhostdb_ldap.x86_64 : Virtual host module for lighttpd that uses LDAP
+lighttpd-mod_vhostdb_mysql.x86_64 : Virtual host module for lighttpd that uses MySQL
+lighttpd-mod_vhostdb_pgsql.x86_64 : Virtual host module for lighttpd that uses PostgreSQL
+lighttpd-mod_webdav.x86_64 : WebDAV module for lighttpd
+pagure-web-apache-httpd.noarch : Apache HTTPD configuration for Pagure
+python3-keycloak-httpd-client-install.noarch : Tools to configure Apache HTTPD as Keycloak
+                                             : client
+radicale3-httpd.noarch : httpd config for Radicale
+===================================== Name Matched: httpd =====================================
+httpd-devel.x86_64 : Development interfaces for the Apache HTTP server
+httpd-filesystem.noarch : The basic directory layout for the Apache HTTP server
+httpd-manual.noarch : Documentation for the Apache HTTP server
+httpd-tools.x86_64 : Tools for use with the Apache HTTP Server
+libmicrohttpd.i686 : Lightweight library for embedding a webserver in applications
+libmicrohttpd.x86_64 : Lightweight library for embedding a webserver in applications
+lighttpd.x86_64 : Lightning fast webserver with light system requirements
+perl-Test-Fake-HTTPD.noarch : Fake HTTP server module for testing
+sysusage-httpd.noarch : Apache configuration for sysusage
+thttpd.x86_64 : A tiny, turbo, throttleable lightweight HTTP server
+=================================== Summary Matched: httpd ====================================
+mod_auth_mellon.x86_64 : A SAML 2.0 authentication module for the Apache Httpd Server
+mod_dav_svn.x86_64 : Apache httpd module for Subversion server
+[generic@csa-4485-08 ~]$ sudo yum install apache2
+Last metadata expiration check: 2:35:27 ago on Wed 02 Nov 2022 08:39:34 PM CDT.
+No match for argument: apache2
+Error: Unable to find a match: apache2
+[generic@csa-4485-08 ~]$ sudo yum update
+Last metadata expiration check: 2:37:37 ago on Wed 02 Nov 2022 08:39:34 PM CDT.
+Dependencies resolved.
+==============================================================================================================================
+ Package                                    Arch   Version                                                    Repo       Size
+==============================================================================================================================
+Installing:
+ kernel                                     x86_64 4.18.0-372.32.1.el8_6                                      baseos    8.1 M
+Upgrading:
+ NetworkManager                             x86_64 1:1.36.0-9.el8_6                                           baseos    2.3 M
+ NetworkManager-adsl                        x86_64 1:1.36.0-9.el8_6                                           baseos    149 k
+ NetworkManager-bluetooth                   x86_64 1:1.36.0-9.el8_6                                           baseos    174 k
+ NetworkManager-config-server               noarch 1:1.36.0-9.el8_6                                           baseos    136 k
+ NetworkManager-initscripts-updown          noarch 1:1.36.0-9.el8_6                                           baseos    137 k
+ NetworkManager-libnm                       x86_64 1:1.36.0-9.el8_6                                           baseos    1.8 M
+ NetworkManager-team                        x86_64 1:1.36.0-9.el8_6                                           baseos    152 k
+ NetworkManager-tui                         x86_64 1:1.36.0-9.el8_6                                           baseos    345 k
+ NetworkManager-wifi                        x86_64 1:1.36.0-9.el8_6                                           baseos    193 k
+ NetworkManager-wwan                        x86_64 1:1.36.0-9.el8_6                                           baseos    180 k
+ bind-export-libs                           x86_64 32:9.11.36-3.el8_6.1                                       baseos    1.1 M
+ bind-libs                                  x86_64 32:9.11.36-3.el8_6.1                                       appstream 174 k
+ bind-libs-lite                             x86_64 32:9.11.36-3.el8_6.1                                       appstream 1.2 M
+ bind-license                               noarch 32:9.11.36-3.el8_6.1                                       appstream 102 k
+ bind-utils                                 x86_64 32:9.11.36-3.el8_6.1                                       appstream 450 k
+ bpftool                                    x86_64 4.18.0-372.32.1.el8_6                                      baseos    8.8 M
+ ca-certificates                            noarch 2022.2.54-80.2.el8_6                                       baseos    920 k
+ cockpit                                    x86_64 264.2-1.el8_6                                              baseos     78 k
+ cockpit-bridge                             x86_64 264.2-1.el8_6                                              baseos    533 k
+ cockpit-system                             noarch 264.2-1.el8_6                                              baseos    3.2 M
+ cockpit-ws                                 x86_64 264.2-1.el8_6                                              baseos    1.3 M
+ conmon                                     x86_64 2:2.1.3-1.module_el8.6.0+3336+00d107d5                     appstream  55 k
+ container-selinux                          noarch 2:2.189.0-1.module_el8.6.0+3336+00d107d5                   appstream  58 k
+ containers-common                          x86_64 2:1-39.module_el8.6.0+3336+00d107d5                        appstream 110 k
+ device-mapper-multipath                    x86_64 0.8.4-22.el8_6.2                                           baseos    199 k
+ device-mapper-multipath-libs               x86_64 0.8.4-22.el8_6.2                                           baseos    324 k
+ dnsmasq                                    x86_64 2.79-21.el8_6.1                                            appstream 319 k
+ epel-release                               noarch 8-18.el8                                                   epel       24 k
+ expat                                      x86_64 2.2.5-8.el8_6.3                                            baseos    112 k
+ firefox                                    x86_64 102.4.0-1.el8_6.alma                                       appstream 108 M
+ glib2                                      x86_64 2.56.4-158.el8_6.1                                         baseos    2.5 M
+ gnome-settings-daemon                      x86_64 3.32.0-16.el8_6.1.alma                                     appstream 1.0 M
+ gnupg2                                     x86_64 2.2.20-3.el8_6                                             baseos    2.4 M
+ gnupg2-smime                               x86_64 2.2.20-3.el8_6                                             baseos    282 k
+ gnutls                                     x86_64 3.6.16-5.el8_6                                             baseos    1.0 M
+ gnutls-dane                                x86_64 3.6.16-5.el8_6                                             appstream  51 k
+ gnutls-utils                               x86_64 3.6.16-5.el8_6                                             appstream 347 k
+ initscripts                                x86_64 10.00.17-1.el8_6.2                                         baseos    339 k
+ iproute                                    x86_64 5.15.0-4.el8_6.1                                           baseos    797 k
+ iproute-tc                                 x86_64 5.15.0-4.el8_6.1                                           baseos    463 k
+ iwl100-firmware                            noarch 39.31.5.1-108.el8_6.1                                      baseos    173 k
+ iwl1000-firmware                           noarch 1:39.31.5.1-108.el8_6.1                                    baseos    236 k
+ iwl105-firmware                            noarch 18.168.6.1-108.el8_6.1                                     baseos    257 k
+ iwl135-firmware                            noarch 18.168.6.1-108.el8_6.1                                     baseos    266 k
+ iwl2000-firmware                           noarch 18.168.6.1-108.el8_6.1                                     baseos    260 k
+ iwl2030-firmware                           noarch 18.168.6.1-108.el8_6.1                                     baseos    269 k
+ iwl3160-firmware                           noarch 1:25.30.13.0-108.el8_6.1                                   baseos    1.7 M
+ iwl3945-firmware                           noarch 15.32.2.9-108.el8_6.1                                      baseos    111 k
+ iwl4965-firmware                           noarch 228.61.2.24-108.el8_6.1                                    baseos    125 k
+ iwl5000-firmware                           noarch 8.83.5.1_1-108.el8_6.1                                     baseos    317 k
+ iwl5150-firmware                           noarch 8.24.2.2-108.el8_6.1                                       baseos    170 k
+ iwl6000-firmware                           noarch 9.221.4.1-108.el8_6.1                                      baseos    190 k
+ iwl6000g2a-firmware                        noarch 18.168.6.1-108.el8_6.1                                     baseos    333 k
+ iwl6000g2b-firmware                        noarch 18.168.6.1-108.el8_6.1                                     baseos    333 k
+ iwl6050-firmware                           noarch 41.28.5.1-108.el8_6.1                                      baseos    266 k
+ iwl7260-firmware                           noarch 1:25.30.13.0-108.el8_6.1                                   baseos     23 M
+ java-1.8.0-openjdk-headless                x86_64 1:1.8.0.352.b08-2.el8_6                                    appstream  34 M
+ kernel-headers                             x86_64 4.18.0-372.32.1.el8_6                                      baseos    9.4 M
+ kernel-tools                               x86_64 4.18.0-372.32.1.el8_6                                      baseos    8.3 M
+ kernel-tools-libs                          x86_64 4.18.0-372.32.1.el8_6                                      baseos    8.1 M
+ kpartx                                     x86_64 0.8.4-22.el8_6.2                                           baseos    114 k
+ libdnf                                     x86_64 0.63.0-8.2.el8_6.alma                                      baseos    705 k
+ libertas-usb8388-firmware                  noarch 2:20220210-108.git6342082c.el8_6                           baseos    136 k
+ libksba                                    x86_64 1.3.5-8.el8_6                                              baseos    133 k
+ libsemanage                                x86_64 2.9-9.el8_6                                                baseos    167 k
+ libsmbclient                               x86_64 4.15.5-10.el8_6                                            baseos    150 k
+ libvirt-daemon                             x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream 418 k
+ libvirt-daemon-config-network              x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  66 k
+ libvirt-daemon-driver-interface            x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream 209 k
+ libvirt-daemon-driver-network              x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream 234 k
+ libvirt-daemon-driver-nodedev              x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream 219 k
+ libvirt-daemon-driver-nwfilter             x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream 234 k
+ libvirt-daemon-driver-qemu                 x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream 923 k
+ libvirt-daemon-driver-secret               x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream 197 k
+ libvirt-daemon-driver-storage              x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  65 k
+ libvirt-daemon-driver-storage-core         x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream 252 k
+ libvirt-daemon-driver-storage-disk         x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  75 k
+ libvirt-daemon-driver-storage-gluster      x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  77 k
+ libvirt-daemon-driver-storage-iscsi        x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  72 k
+ libvirt-daemon-driver-storage-iscsi-direct x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  74 k
+ libvirt-daemon-driver-storage-logical      x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  76 k
+ libvirt-daemon-driver-storage-mpath        x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  69 k
+ libvirt-daemon-driver-storage-rbd          x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  80 k
+ libvirt-daemon-driver-storage-scsi         x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  72 k
+ libvirt-daemon-kvm                         x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream  64 k
+ libvirt-libs                               x86_64 8.0.0-5.5.module_el8.6.0+3337+88d7cc9c                     appstream 4.7 M
+ libwbclient                                x86_64 4.15.5-10.el8_6                                            baseos    123 k
+ linux-firmware                             noarch 20220210-108.git6342082c.el8_6                             baseos    196 M
+ nspr                                       x86_64 4.34.0-3.el8_6                                             appstream 142 k
+ nss                                        x86_64 3.79.0-10.el8_6                                            appstream 746 k
+ nss-softokn                                x86_64 3.79.0-10.el8_6                                            appstream 1.2 M
+ nss-softokn-freebl                         x86_64 3.79.0-10.el8_6                                            appstream 397 k
+ nss-sysinit                                x86_64 3.79.0-10.el8_6                                            appstream  73 k
+ nss-tools                                  x86_64 3.79.0-10.el8_6                                            appstream 581 k
+ nss-util                                   x86_64 3.79.0-10.el8_6                                            appstream 137 k
+ pam                                        x86_64 1.3.1-16.el8_6.1                                           baseos    739 k
+ platform-python                            x86_64 3.6.8-47.el8_6.alma                                        baseos     85 k
+ podman                                     x86_64 2:4.1.1-7.module_el8.6.0+3336+00d107d5                     appstream  12 M
+ podman-catatonit                           x86_64 2:4.1.1-7.module_el8.6.0+3336+00d107d5                     appstream 350 k
+ python3-bind                               noarch 32:9.11.36-3.el8_6.1                                       appstream 149 k
+ python3-hawkey                             x86_64 0.63.0-8.2.el8_6.alma                                      baseos    116 k
+ python3-libdnf                             x86_64 0.63.0-8.2.el8_6.alma                                      baseos    777 k
+ python3-libs                               x86_64 3.6.8-47.el8_6.alma                                        baseos    7.8 M
+ python3-libsemanage                        x86_64 2.9-9.el8_6                                                baseos    127 k
+ python3-perf                               x86_64 4.18.0-372.32.1.el8_6                                      baseos    8.2 M
+ python3-rpm                                x86_64 4.14.3-24.el8_6                                            baseos    154 k
+ qemu-guest-agent                           x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 343 k
+ qemu-img                                   x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 2.2 M
+ qemu-kvm                                   x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 167 k
+ qemu-kvm-block-curl                        x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 178 k
+ qemu-kvm-block-gluster                     x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 179 k
+ qemu-kvm-block-iscsi                       x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 185 k
+ qemu-kvm-block-rbd                         x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 180 k
+ qemu-kvm-block-ssh                         x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 180 k
+ qemu-kvm-common                            x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 1.1 M
+ qemu-kvm-core                              x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 3.4 M
+ qemu-kvm-docs                              x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 2.6 M
+ qemu-kvm-hw-usbredir                       x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 189 k
+ qemu-kvm-ui-opengl                         x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 181 k
+ qemu-kvm-ui-spice                          x86_64 15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6                 appstream 228 k
+ rpm                                        x86_64 4.14.3-24.el8_6                                            baseos    542 k
+ rpm-build                                  x86_64 4.14.3-24.el8_6                                            appstream 173 k
+ rpm-build-libs                             x86_64 4.14.3-24.el8_6                                            baseos    156 k
+ rpm-libs                                   x86_64 4.14.3-24.el8_6                                            baseos    344 k
+ rpm-plugin-selinux                         x86_64 4.14.3-24.el8_6                                            baseos     77 k
+ rpm-plugin-systemd-inhibit                 x86_64 4.14.3-24.el8_6                                            baseos     78 k
+ rpm-sign                                   x86_64 4.14.3-24.el8_6                                            baseos     80 k
+ runc                                       x86_64 1:1.1.3-3.module_el8.6.0+3341+735fcc68                     appstream 3.0 M
+ samba-client                               x86_64 4.15.5-10.el8_6                                            baseos    715 k
+ samba-client-libs                          x86_64 4.15.5-10.el8_6                                            baseos    5.5 M
+ samba-common                               noarch 4.15.5-10.el8_6                                            baseos    224 k
+ samba-common-libs                          x86_64 4.15.5-10.el8_6                                            baseos    176 k
+ sos                                        noarch 4.2-22.el8_6.alma                                          baseos    776 k
+ sqlite                                     x86_64 3.26.0-16.el8_6                                            baseos    667 k
+ sqlite-libs                                x86_64 3.26.0-16.el8_6                                            baseos    580 k
+ swtpm                                      x86_64 0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a    appstream  42 k
+ swtpm-libs                                 x86_64 0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a    appstream  48 k
+ swtpm-tools                                x86_64 0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a    appstream 118 k
+ systemd                                    x86_64 239-58.el8_6.8                                             baseos    3.6 M
+ systemd-container                          x86_64 239-58.el8_6.8                                             baseos    759 k
+ systemd-libs                               x86_64 239-58.el8_6.8                                             baseos    1.1 M
+ systemd-pam                                x86_64 239-58.el8_6.8                                             baseos    486 k
+ systemd-udev                               x86_64 239-58.el8_6.8                                             baseos    1.6 M
+ tzdata                                     noarch 2022e-1.el8                                                baseos    470 k
+ tzdata-java                                noarch 2022e-1.el8                                                appstream 185 k
+ webkit2gtk3                                x86_64 2.36.7-1.el8_6                                             appstream  19 M
+ webkit2gtk3-jsc                            x86_64 2.36.7-1.el8_6                                             appstream 6.8 M
+ zlib                                       x86_64 1.2.11-19.el8_6                                            baseos    102 k
+ zlib-devel                                 x86_64 1.2.11-19.el8_6                                            baseos     57 k
+Installing dependencies:
+ kernel-core                                x86_64 4.18.0-372.32.1.el8_6                                      baseos     40 M
+ kernel-modules                             x86_64 4.18.0-372.32.1.el8_6                                      baseos     32 M
+ libatomic                                  x86_64 8.5.0-10.1.el8_6.alma                                      baseos     23 k
+Installing weak dependencies:
+ kernel-devel                               x86_64 4.18.0-372.32.1.el8_6                                      baseos     21 M
+
+Transaction Summary
+==============================================================================================================================
+Install    5 Packages
+Upgrade  149 Packages
+
+Total download size: 629 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/154): kernel-4.18.0-372.32.1.el8_6.x86_64.rpm                                               27 MB/s | 8.1 MB     00:00
+(2/154): kernel-devel-4.18.0-372.32.1.el8_6.x86_64.rpm                                         26 MB/s |  21 MB     00:00
+(3/154): libatomic-8.5.0-10.1.el8_6.alma.x86_64.rpm                                           994 kB/s |  23 kB     00:00
+(4/154): NetworkManager-1.36.0-9.el8_6.x86_64.rpm                                              15 MB/s | 2.3 MB     00:00
+(5/154): NetworkManager-adsl-1.36.0-9.el8_6.x86_64.rpm                                         18 MB/s | 149 kB     00:00
+(6/154): NetworkManager-bluetooth-1.36.0-9.el8_6.x86_64.rpm                                    18 MB/s | 174 kB     00:00
+(7/154): NetworkManager-config-server-1.36.0-9.el8_6.noarch.rpm                                17 MB/s | 136 kB     00:00
+(8/154): NetworkManager-initscripts-updown-1.36.0-9.el8_6.noarch.rpm                           18 MB/s | 137 kB     00:00
+(9/154): NetworkManager-libnm-1.36.0-9.el8_6.x86_64.rpm                                        28 MB/s | 1.8 MB     00:00
+(10/154): NetworkManager-team-1.36.0-9.el8_6.x86_64.rpm                                        17 MB/s | 152 kB     00:00
+(11/154): NetworkManager-tui-1.36.0-9.el8_6.x86_64.rpm                                         22 MB/s | 345 kB     00:00
+(12/154): NetworkManager-wifi-1.36.0-9.el8_6.x86_64.rpm                                        20 MB/s | 193 kB     00:00
+(13/154): NetworkManager-wwan-1.36.0-9.el8_6.x86_64.rpm                                        19 MB/s | 180 kB     00:00
+(14/154): bind-export-libs-9.11.36-3.el8_6.1.x86_64.rpm                                        26 MB/s | 1.1 MB     00:00
+(15/154): kernel-core-4.18.0-372.32.1.el8_6.x86_64.rpm                                         26 MB/s |  40 MB     00:01
+(16/154): ca-certificates-2022.2.54-80.2.el8_6.noarch.rpm                                      12 MB/s | 920 kB     00:00
+(17/154): bpftool-4.18.0-372.32.1.el8_6.x86_64.rpm                                             19 MB/s | 8.8 MB     00:00
+(18/154): cockpit-264.2-1.el8_6.x86_64.rpm                                                    1.5 MB/s |  78 kB     00:00
+(19/154): cockpit-bridge-264.2-1.el8_6.x86_64.rpm                                              18 MB/s | 533 kB     00:00
+(20/154): cockpit-ws-264.2-1.el8_6.x86_64.rpm                                                  16 MB/s | 1.3 MB     00:00
+(21/154): device-mapper-multipath-0.8.4-22.el8_6.2.x86_64.rpm                                  17 MB/s | 199 kB     00:00
+(22/154): device-mapper-multipath-libs-0.8.4-22.el8_6.2.x86_64.rpm                             18 MB/s | 324 kB     00:00
+(23/154): expat-2.2.5-8.el8_6.3.x86_64.rpm                                                     14 MB/s | 112 kB     00:00
+(24/154): cockpit-system-264.2-1.el8_6.noarch.rpm                                              13 MB/s | 3.2 MB     00:00
+(25/154): glib2-2.56.4-158.el8_6.1.x86_64.rpm                                                  20 MB/s | 2.5 MB     00:00
+(26/154): gnupg2-smime-2.2.20-3.el8_6.x86_64.rpm                                               17 MB/s | 282 kB     00:00
+(27/154): gnutls-3.6.16-5.el8_6.x86_64.rpm                                                     19 MB/s | 1.0 MB     00:00
+(28/154): initscripts-10.00.17-1.el8_6.2.x86_64.rpm                                            19 MB/s | 339 kB     00:00
+(29/154): iproute-5.15.0-4.el8_6.1.x86_64.rpm                                                  20 MB/s | 797 kB     00:00
+(30/154): iproute-tc-5.15.0-4.el8_6.1.x86_64.rpm                                              8.6 MB/s | 463 kB     00:00
+(31/154): gnupg2-2.2.20-3.el8_6.x86_64.rpm                                                     11 MB/s | 2.4 MB     00:00
+(32/154): iwl100-firmware-39.31.5.1-108.el8_6.1.noarch.rpm                                    8.9 MB/s | 173 kB     00:00
+(33/154): iwl105-firmware-18.168.6.1-108.el8_6.1.noarch.rpm                                    16 MB/s | 257 kB     00:00
+(34/154): iwl1000-firmware-39.31.5.1-108.el8_6.1.noarch.rpm                                   8.3 MB/s | 236 kB     00:00
+(35/154): iwl135-firmware-18.168.6.1-108.el8_6.1.noarch.rpm                                    11 MB/s | 266 kB     00:00
+(36/154): iwl2030-firmware-18.168.6.1-108.el8_6.1.noarch.rpm                                   18 MB/s | 269 kB     00:00
+(37/154): iwl2000-firmware-18.168.6.1-108.el8_6.1.noarch.rpm                                  7.4 MB/s | 260 kB     00:00
+(38/154): iwl3945-firmware-15.32.2.9-108.el8_6.1.noarch.rpm                                   6.1 MB/s | 111 kB     00:00
+(39/154): iwl4965-firmware-228.61.2.24-108.el8_6.1.noarch.rpm                                 6.4 MB/s | 125 kB     00:00
+(40/154): iwl3160-firmware-25.30.13.0-108.el8_6.1.noarch.rpm                                   17 MB/s | 1.7 MB     00:00
+(41/154): iwl5000-firmware-8.83.5.1_1-108.el8_6.1.noarch.rpm                                  5.2 MB/s | 317 kB     00:00
+(42/154): iwl5150-firmware-8.24.2.2-108.el8_6.1.noarch.rpm                                     15 MB/s | 170 kB     00:00
+(43/154): iwl6000-firmware-9.221.4.1-108.el8_6.1.noarch.rpm                                    10 MB/s | 190 kB     00:00
+(44/154): iwl6000g2a-firmware-18.168.6.1-108.el8_6.1.noarch.rpm                                20 MB/s | 333 kB     00:00
+(45/154): iwl6050-firmware-41.28.5.1-108.el8_6.1.noarch.rpm                                    20 MB/s | 266 kB     00:00
+(46/154): iwl6000g2b-firmware-18.168.6.1-108.el8_6.1.noarch.rpm                                12 MB/s | 333 kB     00:00
+(47/154): kernel-modules-4.18.0-372.32.1.el8_6.x86_64.rpm                                      14 MB/s |  32 MB     00:02
+(48/154): kernel-tools-4.18.0-372.32.1.el8_6.x86_64.rpm                                        28 MB/s | 8.3 MB     00:00
+(49/154): kernel-headers-4.18.0-372.32.1.el8_6.x86_64.rpm                                      10 MB/s | 9.4 MB     00:00
+(50/154): kernel-tools-libs-4.18.0-372.32.1.el8_6.x86_64.rpm                                   19 MB/s | 8.1 MB     00:00
+(51/154): kpartx-0.8.4-22.el8_6.2.x86_64.rpm                                                  1.8 MB/s | 114 kB     00:00
+(52/154): iwl7260-firmware-25.30.13.0-108.el8_6.1.noarch.rpm                                   19 MB/s |  23 MB     00:01
+(53/154): libertas-usb8388-firmware-20220210-108.git6342082c.el8_6.noarch.rpm                 592 kB/s | 136 kB     00:00
+(54/154): libdnf-0.63.0-8.2.el8_6.alma.x86_64.rpm                                             2.8 MB/s | 705 kB     00:00
+(55/154): libksba-1.3.5-8.el8_6.x86_64.rpm                                                    6.6 MB/s | 133 kB     00:00
+(56/154): libsemanage-2.9-9.el8_6.x86_64.rpm                                                  8.1 MB/s | 167 kB     00:00
+(57/154): libsmbclient-4.15.5-10.el8_6.x86_64.rpm                                              12 MB/s | 150 kB     00:00
+(58/154): libwbclient-4.15.5-10.el8_6.x86_64.rpm                                               12 MB/s | 123 kB     00:00
+(59/154): platform-python-3.6.8-47.el8_6.alma.x86_64.rpm                                       12 MB/s |  85 kB     00:00
+(60/154): python3-hawkey-0.63.0-8.2.el8_6.alma.x86_64.rpm                                     6.4 MB/s | 116 kB     00:00
+(61/154): pam-1.3.1-16.el8_6.1.x86_64.rpm                                                      20 MB/s | 739 kB     00:00
+(62/154): python3-libdnf-0.63.0-8.2.el8_6.alma.x86_64.rpm                                      21 MB/s | 777 kB     00:00
+(63/154): python3-libsemanage-2.9-9.el8_6.x86_64.rpm                                          9.5 MB/s | 127 kB     00:00
+(64/154): python3-libs-3.6.8-47.el8_6.alma.x86_64.rpm                                          26 MB/s | 7.8 MB     00:00
+(65/154): python3-rpm-4.14.3-24.el8_6.x86_64.rpm                                               16 MB/s | 154 kB     00:00
+(66/154): rpm-4.14.3-24.el8_6.x86_64.rpm                                                       23 MB/s | 542 kB     00:00
+(67/154): rpm-build-libs-4.14.3-24.el8_6.x86_64.rpm                                            15 MB/s | 156 kB     00:00
+(68/154): python3-perf-4.18.0-372.32.1.el8_6.x86_64.rpm                                        23 MB/s | 8.2 MB     00:00
+(69/154): rpm-libs-4.14.3-24.el8_6.x86_64.rpm                                                 6.0 MB/s | 344 kB     00:00
+(70/154): rpm-plugin-selinux-4.14.3-24.el8_6.x86_64.rpm                                       8.6 MB/s |  77 kB     00:00
+(71/154): rpm-plugin-systemd-inhibit-4.14.3-24.el8_6.x86_64.rpm                                14 MB/s |  78 kB     00:00
+(72/154): rpm-sign-4.14.3-24.el8_6.x86_64.rpm                                                  13 MB/s |  80 kB     00:00
+(73/154): samba-client-4.15.5-10.el8_6.x86_64.rpm                                              25 MB/s | 715 kB     00:00
+(74/154): samba-common-4.15.5-10.el8_6.noarch.rpm                                              16 MB/s | 224 kB     00:00
+(75/154): samba-common-libs-4.15.5-10.el8_6.x86_64.rpm                                         14 MB/s | 176 kB     00:00
+(76/154): sos-4.2-22.el8_6.alma.noarch.rpm                                                     17 MB/s | 776 kB     00:00
+(77/154): sqlite-3.26.0-16.el8_6.x86_64.rpm                                                    16 MB/s | 667 kB     00:00
+(78/154): sqlite-libs-3.26.0-16.el8_6.x86_64.rpm                                               22 MB/s | 580 kB     00:00
+(79/154): samba-client-libs-4.15.5-10.el8_6.x86_64.rpm                                         27 MB/s | 5.5 MB     00:00
+(80/154): systemd-container-239-58.el8_6.8.x86_64.rpm                                          17 MB/s | 759 kB     00:00
+(81/154): systemd-libs-239-58.el8_6.8.x86_64.rpm                                               25 MB/s | 1.1 MB     00:00
+(82/154): systemd-pam-239-58.el8_6.8.x86_64.rpm                                                19 MB/s | 486 kB     00:00
+(83/154): systemd-239-58.el8_6.8.x86_64.rpm                                                    20 MB/s | 3.6 MB     00:00
+(84/154): tzdata-2022e-1.el8.noarch.rpm                                                        18 MB/s | 470 kB     00:00
+(85/154): systemd-udev-239-58.el8_6.8.x86_64.rpm                                               22 MB/s | 1.6 MB     00:00
+(86/154): zlib-1.2.11-19.el8_6.x86_64.rpm                                                     5.7 MB/s | 102 kB     00:00
+(87/154): zlib-devel-1.2.11-19.el8_6.x86_64.rpm                                                11 MB/s |  57 kB     00:00
+(88/154): bind-libs-9.11.36-3.el8_6.1.x86_64.rpm                                              5.9 MB/s | 174 kB     00:00
+(89/154): bind-license-9.11.36-3.el8_6.1.noarch.rpm                                           6.3 MB/s | 102 kB     00:00
+(90/154): bind-libs-lite-9.11.36-3.el8_6.1.x86_64.rpm                                          16 MB/s | 1.2 MB     00:00
+(91/154): conmon-2.1.3-1.module_el8.6.0+3336+00d107d5.x86_64.rpm                              6.0 MB/s |  55 kB     00:00
+(92/154): bind-utils-9.11.36-3.el8_6.1.x86_64.rpm                                             9.6 MB/s | 450 kB     00:00
+(93/154): container-selinux-2.189.0-1.module_el8.6.0+3336+00d107d5.noarch.rpm                 5.8 MB/s |  58 kB     00:00
+(94/154): containers-common-1-39.module_el8.6.0+3336+00d107d5.x86_64.rpm                      5.8 MB/s | 110 kB     00:00
+(95/154): dnsmasq-2.79-21.el8_6.1.x86_64.rpm                                                   13 MB/s | 319 kB     00:00
+(96/154): gnome-settings-daemon-3.32.0-16.el8_6.1.alma.x86_64.rpm                              21 MB/s | 1.0 MB     00:00
+(97/154): gnutls-dane-3.6.16-5.el8_6.x86_64.rpm                                               5.8 MB/s |  51 kB     00:00
+(98/154): gnutls-utils-3.6.16-5.el8_6.x86_64.rpm                                               27 MB/s | 347 kB     00:00
+(99/154): java-1.8.0-openjdk-headless-1.8.0.352.b08-2.el8_6.x86_64.rpm                         60 MB/s |  34 MB     00:00
+(100/154): libvirt-daemon-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm                    32 MB/s | 418 kB     00:00
+(101/154): libvirt-daemon-config-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm     11 MB/s |  66 kB     00:00
+(102/154): libvirt-daemon-driver-interface-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm   35 MB/s | 209 kB     00:00
+(103/154): libvirt-daemon-driver-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm     33 MB/s | 234 kB     00:00
+(104/154): libvirt-daemon-driver-nodedev-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm     32 MB/s | 219 kB     00:00
+(105/154): libvirt-daemon-driver-nwfilter-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm    35 MB/s | 234 kB     00:00
+(106/154): libvirt-daemon-driver-qemu-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm        44 MB/s | 923 kB     00:00
+(107/154): libvirt-daemon-driver-secret-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm      25 MB/s | 197 kB     00:00
+(108/154): libvirt-daemon-driver-storage-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm     12 MB/s |  65 kB     00:00
+(109/154): libvirt-daemon-driver-storage-core-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.r  33 MB/s | 252 kB     00:00
+(110/154): libvirt-daemon-driver-storage-disk-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.r  15 MB/s |  75 kB     00:00
+(111/154): libvirt-daemon-driver-storage-gluster-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_6  15 MB/s |  77 kB     00:00
+(112/154): libvirt-daemon-driver-storage-iscsi-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.  17 MB/s |  72 kB     00:00
+(113/154): libvirt-daemon-driver-storage-iscsi-direct-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.  20 MB/s |  74 kB     00:00
+(114/154): libvirt-daemon-driver-storage-logical-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_6  21 MB/s |  76 kB     00:00
+(115/154): libvirt-daemon-driver-storage-mpath-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.  17 MB/s |  69 kB     00:00
+(116/154): libvirt-daemon-driver-storage-rbd-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rp  22 MB/s |  80 kB     00:00
+(117/154): libvirt-daemon-driver-storage-scsi-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.r  18 MB/s |  72 kB     00:00
+(118/154): libvirt-daemon-kvm-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm                17 MB/s |  64 kB     00:00
+(119/154): libvirt-libs-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64.rpm                      52 MB/s | 4.7 MB     00:00
+(120/154): nspr-4.34.0-3.el8_6.x86_64.rpm                                                      27 MB/s | 142 kB     00:00
+(121/154): nss-3.79.0-10.el8_6.x86_64.rpm                                                      46 MB/s | 746 kB     00:00
+(122/154): nss-softokn-3.79.0-10.el8_6.x86_64.rpm                                              36 MB/s | 1.2 MB     00:00
+(123/154): nss-softokn-freebl-3.79.0-10.el8_6.x86_64.rpm                                       38 MB/s | 397 kB     00:00
+(124/154): nss-sysinit-3.79.0-10.el8_6.x86_64.rpm                                              19 MB/s |  73 kB     00:00
+(125/154): nss-tools-3.79.0-10.el8_6.x86_64.rpm                                                45 MB/s | 581 kB     00:00
+(126/154): nss-util-3.79.0-10.el8_6.x86_64.rpm                                                 30 MB/s | 137 kB     00:00
+(127/154): podman-4.1.1-7.module_el8.6.0+3336+00d107d5.x86_64.rpm                              60 MB/s |  12 MB     00:00
+(128/154): podman-catatonit-4.1.1-7.module_el8.6.0+3336+00d107d5.x86_64.rpm                    32 MB/s | 350 kB     00:00
+(129/154): python3-bind-9.11.36-3.el8_6.1.noarch.rpm                                           23 MB/s | 149 kB     00:00
+(130/154): qemu-guest-agent-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm                 44 MB/s | 343 kB     00:00
+(131/154): qemu-img-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm                         57 MB/s | 2.2 MB     00:00
+(132/154): qemu-kvm-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm                         27 MB/s | 167 kB     00:00
+(133/154): qemu-kvm-block-curl-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm              31 MB/s | 178 kB     00:00
+(134/154): qemu-kvm-block-gluster-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm           31 MB/s | 179 kB     00:00
+(135/154): qemu-kvm-block-iscsi-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm             31 MB/s | 185 kB     00:00
+(136/154): qemu-kvm-block-rbd-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm               31 MB/s | 180 kB     00:00
+(137/154): qemu-kvm-block-ssh-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm               32 MB/s | 180 kB     00:00
+(138/154): qemu-kvm-common-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm                  58 MB/s | 1.1 MB     00:00
+(139/154): qemu-kvm-core-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm                    66 MB/s | 3.4 MB     00:00
+(140/154): qemu-kvm-docs-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm                    57 MB/s | 2.6 MB     00:00
+(141/154): qemu-kvm-hw-usbredir-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm             35 MB/s | 189 kB     00:00
+(142/154): qemu-kvm-ui-opengl-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm               37 MB/s | 181 kB     00:00
+(143/154): qemu-kvm-ui-spice-6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64.rpm                40 MB/s | 228 kB     00:00
+(144/154): rpm-build-4.14.3-24.el8_6.x86_64.rpm                                                21 MB/s | 173 kB     00:00
+(145/154): runc-1.1.3-3.module_el8.6.0+3341+735fcc68.x86_64.rpm                                49 MB/s | 3.0 MB     00:00
+(146/154): swtpm-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64.rpm           7.9 MB/s |  42 kB     00:00
+(147/154): swtpm-libs-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64.rpm       14 MB/s |  48 kB     00:00
+(148/154): swtpm-tools-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64.rpm      29 MB/s | 118 kB     00:00
+(149/154): tzdata-java-2022e-1.el8.noarch.rpm                                                  37 MB/s | 185 kB     00:00
+(150/154): firefox-102.4.0-1.el8_6.alma.x86_64.rpm                                             48 MB/s | 108 MB     00:02
+(151/154): webkit2gtk3-2.36.7-1.el8_6.x86_64.rpm                                               21 MB/s |  19 MB     00:00
+(152/154): webkit2gtk3-jsc-2.36.7-1.el8_6.x86_64.rpm                                           32 MB/s | 6.8 MB     00:00
+(153/154): epel-release-8-18.el8.noarch.rpm                                                   253 kB/s |  24 kB     00:00
+(154/154): linux-firmware-20220210-108.git6342082c.el8_6.noarch.rpm                            34 MB/s | 196 MB     00:05
+------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                          63 MB/s | 629 MB     00:09
+^[[A^[[A^[[BExtra Packages for Enterprise Linux 8 - x86     [   ===                                     ] ---  B/s |   0  B   Extra Packages for Enterprise Linux 8 - x86_64                                                1.6 MB/s | 1.6 kB     00:00
+^[[BImporting GPG key 0x2F86D6A1:
+ Userid     : "Fedora EPEL (8) <epel@fedoraproject.org>"
+ Fingerprint: 94E2 79EB 8D8F 25B2 1810 ADF1 21EA 45AB 2F86 D6A1
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
+Is this ok [y/N]: y
+Is this ok [y/N]: y
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.352.b08-2.el8_6.x86_64                                           1/1
+  Preparing        :                                                                                                      1/1
+  Running scriptlet: zlib-1.2.11-19.el8_6.x86_64                                                                          1/1
+  Upgrading        : zlib-1.2.11-19.el8_6.x86_64                                                                        1/303
+  Upgrading        : systemd-libs-239-58.el8_6.8.x86_64                                                                 2/303
+  Running scriptlet: systemd-libs-239-58.el8_6.8.x86_64                                                                 2/303
+  Upgrading        : gnutls-3.6.16-5.el8_6.x86_64                                                                       3/303
+  Upgrading        : glib2-2.56.4-158.el8_6.1.x86_64                                                                    4/303
+  Upgrading        : libvirt-libs-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                                         5/303
+  Upgrading        : sqlite-libs-3.26.0-16.el8_6.x86_64                                                                 6/303
+  Upgrading        : nspr-4.34.0-3.el8_6.x86_64                                                                         7/303
+  Running scriptlet: nspr-4.34.0-3.el8_6.x86_64                                                                         7/303
+  Upgrading        : nss-util-3.79.0-10.el8_6.x86_64                                                                    8/303
+  Upgrading        : pam-1.3.1-16.el8_6.1.x86_64                                                                        9/303
+  Running scriptlet: pam-1.3.1-16.el8_6.1.x86_64                                                                        9/303
+  Upgrading        : systemd-pam-239-58.el8_6.8.x86_64                                                                 10/303
+  Running scriptlet: systemd-239-58.el8_6.8.x86_64                                                                     11/303
+  Upgrading        : systemd-239-58.el8_6.8.x86_64                                                                     11/303
+  Running scriptlet: systemd-239-58.el8_6.8.x86_64                                                                     11/303
+  Running scriptlet: samba-common-4.15.5-10.el8_6.noarch                                                               12/303
+  Upgrading        : samba-common-4.15.5-10.el8_6.noarch                                                               12/303
+  Running scriptlet: samba-common-4.15.5-10.el8_6.noarch                                                               12/303
+  Upgrading        : libwbclient-4.15.5-10.el8_6.x86_64                                                                13/303
+  Upgrading        : samba-client-libs-4.15.5-10.el8_6.x86_64                                                          14/303
+  Upgrading        : samba-common-libs-4.15.5-10.el8_6.x86_64                                                          15/303
+  Upgrading        : NetworkManager-libnm-1:1.36.0-9.el8_6.x86_64                                                      16/303
+  Running scriptlet: NetworkManager-libnm-1:1.36.0-9.el8_6.x86_64                                                      16/303
+  Upgrading        : qemu-img-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                        17/303
+  Upgrading        : bind-license-32:9.11.36-3.el8_6.1.noarch                                                          18/303
+  Upgrading        : bind-libs-lite-32:9.11.36-3.el8_6.1.x86_64                                                        19/303
+  Upgrading        : systemd-udev-239-58.el8_6.8.x86_64                                                                20/303
+  Running scriptlet: systemd-udev-239-58.el8_6.8.x86_64                                                                20/303
+  Upgrading        : NetworkManager-initscripts-updown-1:1.36.0-9.el8_6.noarch                                         21/303
+  Running scriptlet: NetworkManager-initscripts-updown-1:1.36.0-9.el8_6.noarch                                         21/303
+  Running scriptlet: NetworkManager-1:1.36.0-9.el8_6.x86_64                                                            22/303
+  Upgrading        : NetworkManager-1:1.36.0-9.el8_6.x86_64                                                            22/303
+  Running scriptlet: NetworkManager-1:1.36.0-9.el8_6.x86_64                                                            22/303
+  Upgrading        : rpm-libs-4.14.3-24.el8_6.x86_64                                                                   23/303
+  Running scriptlet: rpm-libs-4.14.3-24.el8_6.x86_64                                                                   23/303
+  Upgrading        : rpm-4.14.3-24.el8_6.x86_64                                                                        24/303
+  Upgrading        : libdnf-0.63.0-8.2.el8_6.alma.x86_64                                                               25/303
+  Upgrading        : cockpit-bridge-264.2-1.el8_6.x86_64                                                               26/303
+  Upgrading        : device-mapper-multipath-libs-0.8.4-22.el8_6.2.x86_64                                              27/303
+  Running scriptlet: device-mapper-multipath-libs-0.8.4-22.el8_6.2.x86_64                                              27/303
+  Upgrading        : runc-1:1.1.3-3.module_el8.6.0+3341+735fcc68.x86_64                                                28/303
+  Running scriptlet: container-selinux-2:2.189.0-1.module_el8.6.0+3336+00d107d5.noarch                                 29/303
+  Upgrading        : container-selinux-2:2.189.0-1.module_el8.6.0+3336+00d107d5.noarch                                 29/303
+  Running scriptlet: container-selinux-2:2.189.0-1.module_el8.6.0+3336+00d107d5.noarch                                 29/303
+  Upgrading        : libksba-1.3.5-8.el8_6.x86_64                                                                      30/303
+  Upgrading        : gnupg2-smime-2.2.20-3.el8_6.x86_64                                                                31/303
+  Upgrading        : gnupg2-2.2.20-3.el8_6.x86_64                                                                      32/303
+  Upgrading        : rpm-build-libs-4.14.3-24.el8_6.x86_64                                                             33/303
+  Running scriptlet: rpm-build-libs-4.14.3-24.el8_6.x86_64                                                             33/303
+  Upgrading        : iproute-5.15.0-4.el8_6.1.x86_64                                                                   34/303
+  Installing       : libatomic-8.5.0-10.1.el8_6.alma.x86_64                                                            35/303
+  Running scriptlet: libatomic-8.5.0-10.1.el8_6.alma.x86_64                                                            35/303
+  Upgrading        : webkit2gtk3-jsc-2.36.7-1.el8_6.x86_64                                                             36/303
+  Upgrading        : iproute-tc-5.15.0-4.el8_6.1.x86_64                                                                37/303
+  Running scriptlet: libvirt-daemon-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                                      38/303
+  Upgrading        : libvirt-daemon-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                                      38/303
+  Running scriptlet: libvirt-daemon-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                                      38/303
+  Upgrading        : libvirt-daemon-driver-storage-core-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                  39/303
+  Upgrading        : libvirt-daemon-driver-storage-disk-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                  40/303
+  Upgrading        : libvirt-daemon-driver-storage-gluster-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64               41/303
+  Upgrading        : libvirt-daemon-driver-storage-iscsi-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                 42/303
+  Upgrading        : libvirt-daemon-driver-storage-iscsi-direct-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64          43/303
+  Upgrading        : libvirt-daemon-driver-storage-logical-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64               44/303
+  Upgrading        : libvirt-daemon-driver-storage-mpath-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                 45/303
+  Upgrading        : libvirt-daemon-driver-storage-rbd-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                   46/303
+  Upgrading        : libvirt-daemon-driver-storage-scsi-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                  47/303
+  Upgrading        : libvirt-daemon-driver-storage-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                       48/303
+  Running scriptlet: libvirt-daemon-driver-storage-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                       48/303
+  Upgrading        : libvirt-daemon-driver-interface-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                     49/303
+  Running scriptlet: libvirt-daemon-driver-interface-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                     49/303
+  Upgrading        : libvirt-daemon-driver-nodedev-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                       50/303
+  Running scriptlet: libvirt-daemon-driver-nodedev-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                       50/303
+  Upgrading        : libvirt-daemon-driver-nwfilter-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      51/303
+  Running scriptlet: libvirt-daemon-driver-nwfilter-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      51/303
+  Upgrading        : libvirt-daemon-driver-secret-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                        52/303
+  Running scriptlet: libvirt-daemon-driver-secret-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                        52/303
+  Upgrading        : containers-common-2:1-39.module_el8.6.0+3336+00d107d5.x86_64                                      53/303
+  Upgrading        : NetworkManager-team-1:1.36.0-9.el8_6.x86_64                                                       54/303
+  Upgrading        : NetworkManager-wwan-1:1.36.0-9.el8_6.x86_64                                                       55/303
+  Upgrading        : bind-libs-32:9.11.36-3.el8_6.1.x86_64                                                             56/303
+  Upgrading        : libsmbclient-4.15.5-10.el8_6.x86_64                                                               57/303
+  Upgrading        : systemd-container-239-58.el8_6.8.x86_64                                                           58/303
+  Running scriptlet: dnsmasq-2.79-21.el8_6.1.x86_64                                                                    59/303
+  Upgrading        : dnsmasq-2.79-21.el8_6.1.x86_64                                                                    59/303
+  Running scriptlet: dnsmasq-2.79-21.el8_6.1.x86_64                                                                    59/303
+  Upgrading        : libvirt-daemon-driver-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                       60/303
+  Running scriptlet: libvirt-daemon-driver-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                       60/303
+  Running scriptlet: cockpit-ws-264.2-1.el8_6.x86_64                                                                   61/303
+  Upgrading        : cockpit-ws-264.2-1.el8_6.x86_64                                                                   61/303
+  Running scriptlet: cockpit-ws-264.2-1.el8_6.x86_64                                                                   61/303
+  Upgrading        : nss-softokn-freebl-3.79.0-10.el8_6.x86_64                                                         62/303
+  Upgrading        : nss-softokn-3.79.0-10.el8_6.x86_64                                                                63/303
+  Upgrading        : nss-sysinit-3.79.0-10.el8_6.x86_64                                                                64/303
+  Upgrading        : nss-3.79.0-10.el8_6.x86_64                                                                        65/303
+  Upgrading        : conmon-2:2.1.3-1.module_el8.6.0+3336+00d107d5.x86_64                                              66/303
+  Upgrading        : podman-catatonit-2:4.1.1-7.module_el8.6.0+3336+00d107d5.x86_64                                    67/303
+  Upgrading        : podman-2:4.1.1-7.module_el8.6.0+3336+00d107d5.x86_64                                              68/303
+  Upgrading        : swtpm-libs-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64                         69/303
+  Upgrading        : swtpm-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64                              70/303
+  Running scriptlet: swtpm-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64                              70/303
+  Upgrading        : gnutls-dane-3.6.16-5.el8_6.x86_64                                                                 71/303
+  Upgrading        : gnutls-utils-3.6.16-5.el8_6.x86_64                                                                72/303
+  Upgrading        : swtpm-tools-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64                        73/303
+  Running scriptlet: libvirt-daemon-driver-qemu-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                          74/303
+  Upgrading        : libvirt-daemon-driver-qemu-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                          74/303
+  Running scriptlet: libvirt-daemon-driver-qemu-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                          74/303
+  Upgrading        : tzdata-java-2022e-1.el8.noarch                                                                    75/303
+  Upgrading        : qemu-kvm-docs-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                   76/303
+  Upgrading        : linux-firmware-20220210-108.git6342082c.el8_6.noarch                                              77/303
+  Installing       : kernel-core-4.18.0-372.32.1.el8_6.x86_64                                                          78/303
+  Running scriptlet: kernel-core-4.18.0-372.32.1.el8_6.x86_64                                                          78/303
+  Installing       : kernel-modules-4.18.0-372.32.1.el8_6.x86_64                                                       79/303
+  Running scriptlet: kernel-modules-4.18.0-372.32.1.el8_6.x86_64                                                       79/303
+  Upgrading        : libsemanage-2.9-9.el8_6.x86_64                                                                    80/303
+  Upgrading        : kpartx-0.8.4-22.el8_6.2.x86_64                                                                    81/303
+  Upgrading        : kernel-tools-libs-4.18.0-372.32.1.el8_6.x86_64                                                    82/303
+  Running scriptlet: kernel-tools-libs-4.18.0-372.32.1.el8_6.x86_64                                                    82/303
+  Upgrading        : expat-2.2.5-8.el8_6.3.x86_64                                                                      83/303
+  Upgrading        : platform-python-3.6.8-47.el8_6.alma.x86_64                                                        84/303
+  Running scriptlet: platform-python-3.6.8-47.el8_6.alma.x86_64                                                        84/303
+  Upgrading        : python3-libs-3.6.8-47.el8_6.alma.x86_64                                                           85/303
+  Upgrading        : qemu-kvm-common-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                 86/303
+  Running scriptlet: qemu-kvm-common-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                 86/303
+  Upgrading        : qemu-kvm-ui-opengl-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                              87/303
+  Upgrading        : qemu-kvm-ui-spice-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                               88/303
+  Upgrading        : qemu-kvm-block-curl-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                             89/303
+  Upgrading        : qemu-kvm-block-gluster-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                          90/303
+  Upgrading        : qemu-kvm-block-iscsi-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                            91/303
+  Upgrading        : qemu-kvm-block-rbd-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                              92/303
+  Upgrading        : qemu-kvm-block-ssh-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                              93/303
+  Upgrading        : qemu-kvm-core-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                   94/303
+  Upgrading        : qemu-kvm-hw-usbredir-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                            95/303
+  Upgrading        : qemu-kvm-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                        96/303
+  Upgrading        : python3-libdnf-0.63.0-8.2.el8_6.alma.x86_64                                                       97/303
+  Upgrading        : sos-4.2-22.el8_6.alma.noarch                                                                      98/303
+  Upgrading        : cockpit-system-264.2-1.el8_6.noarch                                                               99/303
+  Upgrading        : python3-bind-32:9.11.36-3.el8_6.1.noarch                                                         100/303
+  Running scriptlet: ca-certificates-2022.2.54-80.2.el8_6.noarch                                                      101/303
+  Upgrading        : ca-certificates-2022.2.54-80.2.el8_6.noarch                                                      101/303
+  Running scriptlet: ca-certificates-2022.2.54-80.2.el8_6.noarch                                                      101/303
+  Upgrading        : java-1.8.0-openjdk-headless-1:1.8.0.352.b08-2.el8_6.x86_64                                       102/303
+warning: /etc/java/java-1.8.0-openjdk/java-1.8.0-openjdk-1.8.0.352.b08-2.el8_6.x86_64/lib/security/java.policy created as /etc/java/java-1.8.0-openjdk/java-1.8.0-openjdk-1.8.0.352.b08-2.el8_6.x86_64/lib/security/java.policy.rpmnew
+
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.352.b08-2.el8_6.x86_64                                       102/303
+restored /etc/java/java-1.8.0-openjdk/java-1.8.0-openjdk-1.8.0.352.b08-2.el8_6.x86_64/lib/security/java.policy.rpmnew to /etc/java/java-1.8.0-openjdk/java-1.8.0-openjdk-1.8.0.352.b08-2.el8_6.x86_64/lib/security/java.policy
+
+  Upgrading        : bind-utils-32:9.11.36-3.el8_6.1.x86_64                                                           103/303
+  Upgrading        : cockpit-264.2-1.el8_6.x86_64                                                                     104/303
+  Upgrading        : python3-hawkey-0.63.0-8.2.el8_6.alma.x86_64                                                      105/303
+  Upgrading        : libvirt-daemon-kvm-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                                 106/303
+  Upgrading        : python3-libsemanage-2.9-9.el8_6.x86_64                                                           107/303
+  Upgrading        : python3-perf-4.18.0-372.32.1.el8_6.x86_64                                                        108/303
+  Upgrading        : python3-rpm-4.14.3-24.el8_6.x86_64                                                               109/303
+  Upgrading        : kernel-tools-4.18.0-372.32.1.el8_6.x86_64                                                        110/303
+  Upgrading        : device-mapper-multipath-0.8.4-22.el8_6.2.x86_64                                                  111/303
+  Running scriptlet: device-mapper-multipath-0.8.4-22.el8_6.2.x86_64                                                  111/303
+  Installing       : kernel-4.18.0-372.32.1.el8_6.x86_64                                                              112/303
+  Upgrading        : firefox-102.4.0-1.el8_6.alma.x86_64                                                              113/303
+  Running scriptlet: firefox-102.4.0-1.el8_6.alma.x86_64                                                              113/303
+  Upgrading        : gnome-settings-daemon-3.32.0-16.el8_6.1.alma.x86_64                                              114/303
+  Upgrading        : nss-tools-3.79.0-10.el8_6.x86_64                                                                 115/303
+  Upgrading        : libvirt-daemon-config-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      116/303
+  Running scriptlet: libvirt-daemon-config-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      116/303
+  Upgrading        : samba-client-4.15.5-10.el8_6.x86_64                                                              117/303
+  Running scriptlet: samba-client-4.15.5-10.el8_6.x86_64                                                              117/303
+  Upgrading        : NetworkManager-bluetooth-1:1.36.0-9.el8_6.x86_64                                                 118/303
+  Upgrading        : webkit2gtk3-2.36.7-1.el8_6.x86_64                                                                119/303
+  Upgrading        : rpm-sign-4.14.3-24.el8_6.x86_64                                                                  120/303
+  Upgrading        : rpm-build-4.14.3-24.el8_6.x86_64                                                                 121/303
+  Upgrading        : rpm-plugin-selinux-4.14.3-24.el8_6.x86_64                                                        122/303
+  Upgrading        : rpm-plugin-systemd-inhibit-4.14.3-24.el8_6.x86_64                                                123/303
+  Upgrading        : NetworkManager-adsl-1:1.36.0-9.el8_6.x86_64                                                      124/303
+  Upgrading        : NetworkManager-tui-1:1.36.0-9.el8_6.x86_64                                                       125/303
+  Upgrading        : NetworkManager-wifi-1:1.36.0-9.el8_6.x86_64                                                      126/303
+  Upgrading        : initscripts-10.00.17-1.el8_6.2.x86_64                                                            127/303
+  Running scriptlet: initscripts-10.00.17-1.el8_6.2.x86_64                                                            127/303
+  Upgrading        : qemu-guest-agent-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                               128/303
+  Running scriptlet: qemu-guest-agent-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                               128/303
+  Upgrading        : sqlite-3.26.0-16.el8_6.x86_64                                                                    129/303
+  Upgrading        : bpftool-4.18.0-372.32.1.el8_6.x86_64                                                             130/303
+  Upgrading        : zlib-devel-1.2.11-19.el8_6.x86_64                                                                131/303
+  Upgrading        : epel-release-8-18.el8.noarch                                                                     132/303
+  Running scriptlet: epel-release-8-18.el8.noarch                                                                     132/303
+  Upgrading        : tzdata-2022e-1.el8.noarch                                                                        133/303
+  Upgrading        : libertas-usb8388-firmware-2:20220210-108.git6342082c.el8_6.noarch                                134/303
+  Upgrading        : kernel-headers-4.18.0-372.32.1.el8_6.x86_64                                                      135/303
+  Upgrading        : iwl7260-firmware-1:25.30.13.0-108.el8_6.1.noarch                                                 136/303
+  Upgrading        : iwl6050-firmware-41.28.5.1-108.el8_6.1.noarch                                                    137/303
+  Upgrading        : iwl6000g2b-firmware-18.168.6.1-108.el8_6.1.noarch                                                138/303
+  Upgrading        : iwl6000g2a-firmware-18.168.6.1-108.el8_6.1.noarch                                                139/303
+  Upgrading        : iwl6000-firmware-9.221.4.1-108.el8_6.1.noarch                                                    140/303
+  Upgrading        : iwl5150-firmware-8.24.2.2-108.el8_6.1.noarch                                                     141/303
+  Upgrading        : iwl5000-firmware-8.83.5.1_1-108.el8_6.1.noarch                                                   142/303
+  Upgrading        : iwl4965-firmware-228.61.2.24-108.el8_6.1.noarch                                                  143/303
+  Upgrading        : iwl3945-firmware-15.32.2.9-108.el8_6.1.noarch                                                    144/303
+  Upgrading        : iwl3160-firmware-1:25.30.13.0-108.el8_6.1.noarch                                                 145/303
+  Upgrading        : iwl2030-firmware-18.168.6.1-108.el8_6.1.noarch                                                   146/303
+  Upgrading        : iwl2000-firmware-18.168.6.1-108.el8_6.1.noarch                                                   147/303
+  Upgrading        : iwl135-firmware-18.168.6.1-108.el8_6.1.noarch                                                    148/303
+  Upgrading        : iwl105-firmware-18.168.6.1-108.el8_6.1.noarch                                                    149/303
+  Upgrading        : iwl1000-firmware-1:39.31.5.1-108.el8_6.1.noarch                                                  150/303
+  Upgrading        : iwl100-firmware-39.31.5.1-108.el8_6.1.noarch                                                     151/303
+  Upgrading        : bind-export-libs-32:9.11.36-3.el8_6.1.x86_64                                                     152/303
+  Running scriptlet: bind-export-libs-32:9.11.36-3.el8_6.1.x86_64                                                     152/303
+  Upgrading        : NetworkManager-config-server-1:1.36.0-9.el8_6.noarch                                             153/303
+  Installing       : kernel-devel-4.18.0-372.32.1.el8_6.x86_64                                                        154/303
+  Running scriptlet: kernel-devel-4.18.0-372.32.1.el8_6.x86_64                                                        154/303
+  Running scriptlet: samba-client-4.15.5-8.el8_6.x86_64                                                               155/303
+  Cleanup          : samba-client-4.15.5-8.el8_6.x86_64                                                               155/303
+  Running scriptlet: samba-client-4.15.5-8.el8_6.x86_64                                                               155/303
+  Running scriptlet: firefox-91.13.0-1.el8_6.alma.x86_64                                                              156/303
+  Cleanup          : firefox-91.13.0-1.el8_6.alma.x86_64                                                              156/303
+  Running scriptlet: firefox-91.13.0-1.el8_6.alma.x86_64                                                              156/303
+  Cleanup          : nss-tools-3.67.0-7.el8_5.x86_64                                                                  157/303
+  Cleanup          : libsmbclient-4.15.5-8.el8_6.x86_64                                                               158/303
+  Cleanup          : NetworkManager-tui-1:1.36.0-7.el8_6.x86_64                                                       159/303
+  Cleanup          : samba-client-libs-4.15.5-8.el8_6.x86_64                                                          160/303
+  Cleanup          : samba-common-libs-4.15.5-8.el8_6.x86_64                                                          161/303
+  Running scriptlet: libwbclient-4.15.5-8.el8_6.x86_64                                                                162/303
+  Cleanup          : libwbclient-4.15.5-8.el8_6.x86_64                                                                162/303
+  Cleanup          : gnome-settings-daemon-3.32.0-16.el8.alma.x86_64                                                  163/303
+  Running scriptlet: device-mapper-multipath-0.8.4-22.el8_6.1.x86_64                                                  164/303
+  Cleanup          : device-mapper-multipath-0.8.4-22.el8_6.1.x86_64                                                  164/303
+  Running scriptlet: device-mapper-multipath-0.8.4-22.el8_6.1.x86_64                                                  164/303
+  Cleanup          : webkit2gtk3-2.34.6-1.el8.x86_64                                                                  165/303
+  Cleanup          : bind-utils-32:9.11.36-3.el8.x86_64                                                               166/303
+  Cleanup          : python3-hawkey-0.63.0-8.1.el8_6.alma.x86_64                                                      167/303
+  Cleanup          : libvirt-daemon-kvm-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                                 168/303
+  Cleanup          : qemu-kvm-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                       169/303
+  Running scriptlet: libvirt-daemon-driver-qemu-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                         170/303
+  Cleanup          : libvirt-daemon-driver-qemu-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                         170/303
+  Running scriptlet: libvirt-daemon-driver-nodedev-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      171/303
+  Cleanup          : libvirt-daemon-driver-nodedev-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      171/303
+  Running scriptlet: libvirt-daemon-driver-interface-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                    172/303
+  Cleanup          : libvirt-daemon-driver-interface-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                    172/303
+  Running scriptlet: libvirt-daemon-driver-nwfilter-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                     173/303
+  Cleanup          : libvirt-daemon-driver-nwfilter-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                     173/303
+  Running scriptlet: libvirt-daemon-driver-secret-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                       174/303
+  Cleanup          : libvirt-daemon-driver-secret-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                       174/303
+  Cleanup          : python3-libdnf-0.63.0-8.1.el8_6.alma.x86_64                                                      175/303
+  Running scriptlet: libvirt-daemon-driver-storage-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      176/303
+  Cleanup          : libvirt-daemon-driver-storage-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      176/303
+  Cleanup          : python3-rpm-4.14.3-23.el8.x86_64                                                                 177/303
+  Cleanup          : qemu-kvm-core-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                  178/303
+  Cleanup          : python3-libsemanage-2.9-8.el8.x86_64                                                             179/303
+  Cleanup          : NetworkManager-bluetooth-1:1.36.0-7.el8_6.x86_64                                                 180/303
+  Cleanup          : NetworkManager-wwan-1:1.36.0-7.el8_6.x86_64                                                      181/303
+  Cleanup          : swtpm-tools-0.7.0-1.20211109gitb79fd91.module_el8.6.0+2880+7d9e3703.x86_64                       182/303
+  Cleanup          : gnutls-utils-3.6.16-4.el8.x86_64                                                                 183/303
+  Cleanup          : systemd-container-239-58.el8_6.4.x86_64                                                          184/303
+  Cleanup          : libvirt-daemon-driver-storage-scsi-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                 185/303
+  Cleanup          : libdnf-0.63.0-8.1.el8_6.alma.x86_64                                                              186/303
+  Cleanup          : bind-libs-32:9.11.36-3.el8.x86_64                                                                187/303
+  Cleanup          : webkit2gtk3-jsc-2.34.6-1.el8.x86_64                                                              188/303
+  Cleanup          : rpm-build-4.14.3-23.el8.x86_64                                                                   189/303
+  Running scriptlet: qemu-guest-agent-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                               190/303
+  Cleanup          : qemu-guest-agent-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                               190/303
+  Running scriptlet: qemu-guest-agent-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                               190/303
+  Cleanup          : podman-2:4.1.1-2.module_el8.6.0+3070+1510fbd1.x86_64                                             191/303
+  Cleanup          : rpm-sign-4.14.3-23.el8.x86_64                                                                    192/303
+  Cleanup          : rpm-build-libs-4.14.3-23.el8.x86_64                                                              193/303
+  Running scriptlet: rpm-build-libs-4.14.3-23.el8.x86_64                                                              193/303
+  Cleanup          : gnupg2-2.2.20-2.el8.x86_64                                                                       194/303
+  Cleanup          : libvirt-daemon-driver-storage-disk-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                 195/303
+  Cleanup          : libvirt-daemon-driver-storage-gluster-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64              196/303
+  Cleanup          : libvirt-daemon-driver-storage-iscsi-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                197/303
+  Cleanup          : libvirt-daemon-driver-storage-iscsi-direct-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64         198/303
+  Cleanup          : libvirt-daemon-driver-storage-logical-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64              199/303
+  Cleanup          : libvirt-daemon-driver-storage-mpath-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                200/303
+  Cleanup          : libvirt-daemon-driver-storage-rbd-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                  201/303
+  Cleanup          : libvirt-daemon-driver-storage-core-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                 202/303
+  Cleanup          : qemu-img-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                       203/303
+  Cleanup          : rpm-plugin-systemd-inhibit-4.14.3-23.el8.x86_64                                                  204/303
+  Cleanup          : rpm-plugin-selinux-4.14.3-23.el8.x86_64                                                          205/303
+  Running scriptlet: initscripts-10.00.15-1.el8.x86_64                                                                206/303
+  Cleanup          : initscripts-10.00.15-1.el8.x86_64                                                                206/303
+  Running scriptlet: initscripts-10.00.15-1.el8.x86_64                                                                206/303
+  Cleanup          : NetworkManager-wifi-1:1.36.0-7.el8_6.x86_64                                                      207/303
+  Cleanup          : containers-common-2:1-35.module_el8.6.0+3070+1510fbd1.x86_64                                     208/303
+  Cleanup          : python3-bind-32:9.11.36-3.el8.noarch                                                             209/303
+  Cleanup          : cockpit-264.1-1.el8.x86_64                                                                       210/303
+  Running scriptlet: cockpit-ws-264.1-1.el8.x86_64                                                                    211/303
+  Cleanup          : cockpit-ws-264.1-1.el8.x86_64                                                                    211/303
+  Running scriptlet: cockpit-ws-264.1-1.el8.x86_64                                                                    211/303
+  Cleanup          : cockpit-system-264.1-1.el8.noarch                                                                212/303
+  Cleanup          : cockpit-bridge-264.1-1.el8.x86_64                                                                213/303
+  Cleanup          : NetworkManager-team-1:1.36.0-7.el8_6.x86_64                                                      214/303
+  Cleanup          : gnutls-dane-3.6.16-4.el8.x86_64                                                                  215/303
+  Cleanup          : java-1.8.0-openjdk-headless-1:1.8.0.342.b07-2.el8_6.x86_64                                       216/303
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.342.b07-2.el8_6.x86_64                                       216/303
+  Cleanup          : nss-3.67.0-7.el8_5.x86_64                                                                        217/303
+  Cleanup          : nss-softokn-3.67.0-7.el8_5.x86_64                                                                218/303
+  Cleanup          : nss-sysinit-3.67.0-7.el8_5.x86_64                                                                219/303
+  Cleanup          : rpm-4.14.3-23.el8.x86_64                                                                         220/303
+  Cleanup          : rpm-libs-4.14.3-23.el8.x86_64                                                                    221/303
+  Running scriptlet: rpm-libs-4.14.3-23.el8.x86_64                                                                    221/303
+  Cleanup          : conmon-2:2.1.2-2.module_el8.6.0+3070+1510fbd1.x86_64                                             222/303
+  Cleanup          : swtpm-0.7.0-1.20211109gitb79fd91.module_el8.6.0+2880+7d9e3703.x86_64                             223/303
+  Running scriptlet: swtpm-0.7.0-1.20211109gitb79fd91.module_el8.6.0+2880+7d9e3703.x86_64                             223/303
+  Cleanup          : sqlite-3.26.0-15.el8.x86_64                                                                      224/303
+  Cleanup          : kernel-tools-4.18.0-372.19.1.el8_6.x86_64                                                        225/303
+  Cleanup          : bpftool-4.18.0-372.19.1.el8_6.x86_64                                                             226/303
+  Cleanup          : NetworkManager-adsl-1:1.36.0-7.el8_6.x86_64                                                      227/303
+  Cleanup          : sos-4.2-20.el8_6.alma.noarch                                                                     228/303
+  Cleanup          : libvirt-daemon-config-network-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      229/303
+  Cleanup          : zlib-devel-1.2.11-18.el8_5.x86_64                                                                230/303
+  Cleanup          : samba-common-4.15.5-8.el8_6.noarch                                                               231/303
+  Cleanup          : ca-certificates-2021.2.50-80.0.el8_4.noarch                                                      232/303
+  Cleanup          : tzdata-java-2022c-1.el8.noarch                                                                   233/303
+  Cleanup          : container-selinux-2:2.188.0-1.module_el8.6.0+3070+1510fbd1.noarch                                234/303
+  Running scriptlet: container-selinux-2:2.188.0-1.module_el8.6.0+3070+1510fbd1.noarch                                234/303
+  Cleanup          : podman-catatonit-2:4.1.1-2.module_el8.6.0+3070+1510fbd1.x86_64                                   235/303
+  Cleanup          : qemu-kvm-docs-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                  236/303
+  Cleanup          : epel-release-8-17.el8.noarch                                                                     237/303
+  Cleanup          : tzdata-2022c-1.el8.noarch                                                                        238/303
+  Cleanup          : linux-firmware-20220210-107.git6342082c.el8.noarch                                               239/303
+  Cleanup          : libertas-usb8388-firmware-2:20220210-107.git6342082c.el8.noarch                                  240/303
+  Cleanup          : kernel-headers-4.18.0-372.19.1.el8_6.x86_64                                                      241/303
+  Cleanup          : iwl7260-firmware-1:25.30.13.0-107.el8.1.noarch                                                   242/303
+  Cleanup          : iwl6050-firmware-41.28.5.1-107.el8.1.noarch                                                      243/303
+  Cleanup          : iwl6000g2b-firmware-18.168.6.1-107.el8.1.noarch                                                  244/303
+  Cleanup          : iwl6000g2a-firmware-18.168.6.1-107.el8.1.noarch                                                  245/303
+  Cleanup          : iwl6000-firmware-9.221.4.1-107.el8.1.noarch                                                      246/303
+  Cleanup          : iwl5150-firmware-8.24.2.2-107.el8.1.noarch                                                       247/303
+  Cleanup          : iwl5000-firmware-8.83.5.1_1-107.el8.1.noarch                                                     248/303
+  Cleanup          : iwl4965-firmware-228.61.2.24-107.el8.1.noarch                                                    249/303
+  Cleanup          : iwl3945-firmware-15.32.2.9-107.el8.1.noarch                                                      250/303
+  Cleanup          : iwl3160-firmware-1:25.30.13.0-107.el8.1.noarch                                                   251/303
+  Cleanup          : iwl2030-firmware-18.168.6.1-107.el8.1.noarch                                                     252/303
+  Cleanup          : iwl2000-firmware-18.168.6.1-107.el8.1.noarch                                                     253/303
+  Cleanup          : iwl135-firmware-18.168.6.1-107.el8.1.noarch                                                      254/303
+  Cleanup          : iwl105-firmware-18.168.6.1-107.el8.1.noarch                                                      255/303
+  Cleanup          : iwl1000-firmware-1:39.31.5.1-107.el8.1.noarch                                                    256/303
+  Cleanup          : iwl100-firmware-39.31.5.1-107.el8.1.noarch                                                       257/303
+  Cleanup          : NetworkManager-config-server-1:1.36.0-7.el8_6.noarch                                             258/303
+  Running scriptlet: libvirt-daemon-driver-network-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      259/303
+  Cleanup          : libvirt-daemon-driver-network-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      259/303
+  Running scriptlet: libvirt-daemon-driver-network-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      259/303
+  Running scriptlet: libvirt-daemon-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                                     260/303
+  Cleanup          : libvirt-daemon-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                                     260/303
+  Running scriptlet: libvirt-daemon-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                                     260/303
+  Running scriptlet: NetworkManager-1:1.36.0-7.el8_6.x86_64                                                           261/303
+  Cleanup          : NetworkManager-1:1.36.0-7.el8_6.x86_64                                                           261/303
+  Running scriptlet: NetworkManager-1:1.36.0-7.el8_6.x86_64                                                           261/303
+  Cleanup          : NetworkManager-libnm-1:1.36.0-7.el8_6.x86_64                                                     262/303
+  Running scriptlet: NetworkManager-libnm-1:1.36.0-7.el8_6.x86_64                                                     262/303
+  Cleanup          : systemd-udev-239-58.el8_6.4.x86_64                                                               263/303
+  Running scriptlet: systemd-udev-239-58.el8_6.4.x86_64                                                               263/303
+  Cleanup          : libvirt-libs-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                                       264/303
+  Running scriptlet: dnsmasq-2.79-21.el8.x86_64                                                                       265/303
+  Cleanup          : dnsmasq-2.79-21.el8.x86_64                                                                       265/303
+  Running scriptlet: dnsmasq-2.79-21.el8.x86_64                                                                       265/303
+  Cleanup          : nss-softokn-freebl-3.67.0-7.el8_5.x86_64                                                         266/303
+  Cleanup          : nss-util-3.67.0-7.el8_5.x86_64                                                                   267/303
+  Cleanup          : gnupg2-smime-2.2.20-2.el8.x86_64                                                                 268/303
+  Cleanup          : bind-libs-lite-32:9.11.36-3.el8.x86_64                                                           269/303
+  Cleanup          : qemu-kvm-ui-spice-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                              270/303
+  Cleanup          : python3-perf-4.18.0-372.19.1.el8_6.x86_64                                                        271/303
+  Cleanup          : qemu-kvm-ui-opengl-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                             272/303
+  Cleanup          : iproute-tc-5.15.0-4.el8.x86_64                                                                   273/303
+  Cleanup          : swtpm-libs-0.7.0-1.20211109gitb79fd91.module_el8.6.0+2880+7d9e3703.x86_64                        274/303
+  Cleanup          : qemu-kvm-block-curl-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                            275/303
+  Cleanup          : qemu-kvm-block-gluster-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                         276/303
+  Cleanup          : qemu-kvm-block-iscsi-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                           277/303
+  Cleanup          : qemu-kvm-block-rbd-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                             278/303
+  Cleanup          : qemu-kvm-block-ssh-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                             279/303
+  Cleanup          : qemu-kvm-hw-usbredir-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                           280/303
+  Cleanup          : bind-license-32:9.11.36-3.el8.noarch                                                             281/303
+  Running scriptlet: NetworkManager-initscripts-updown-1:1.36.0-7.el8_6.noarch                                        282/303
+  Cleanup          : NetworkManager-initscripts-updown-1:1.36.0-7.el8_6.noarch                                        282/303
+  Running scriptlet: qemu-kvm-common-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                283/303
+  Cleanup          : qemu-kvm-common-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                283/303
+  Running scriptlet: qemu-kvm-common-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                283/303
+  Running scriptlet: systemd-239-58.el8_6.4.x86_64                                                                    284/303
+  Cleanup          : systemd-239-58.el8_6.4.x86_64                                                                    284/303
+  Cleanup          : systemd-pam-239-58.el8_6.4.x86_64                                                                285/303
+  Cleanup          : glib2-2.56.4-158.el8.x86_64                                                                      286/303
+  Cleanup          : device-mapper-multipath-libs-0.8.4-22.el8_6.1.x86_64                                             287/303
+  Running scriptlet: device-mapper-multipath-libs-0.8.4-22.el8_6.1.x86_64                                             287/303
+  Cleanup          : python3-libs-3.6.8-45.el8.alma.x86_64                                                            288/303
+  Cleanup          : platform-python-3.6.8-45.el8.alma.x86_64                                                         289/303
+  Running scriptlet: platform-python-3.6.8-45.el8.alma.x86_64                                                         289/303
+  Cleanup          : sqlite-libs-3.26.0-15.el8.x86_64                                                                 290/303
+  Cleanup          : zlib-1.2.11-18.el8_5.x86_64                                                                      291/303
+  Cleanup          : expat-2.2.5-8.el8_6.2.x86_64                                                                     292/303
+  Cleanup          : systemd-libs-239-58.el8_6.4.x86_64                                                               293/303
+  Cleanup          : gnutls-3.6.16-4.el8.x86_64                                                                       294/303
+  Cleanup          : pam-1.3.1-16.el8.x86_64                                                                          295/303
+  Running scriptlet: pam-1.3.1-16.el8.x86_64                                                                          295/303
+  Cleanup          : iproute-5.15.0-4.el8.x86_64                                                                      296/303
+  Cleanup          : libksba-1.3.5-7.el8.x86_64                                                                       297/303
+  Cleanup          : nspr-4.32.0-1.el8_4.x86_64                                                                       298/303
+  Running scriptlet: nspr-4.32.0-1.el8_4.x86_64                                                                       298/303
+  Cleanup          : kernel-tools-libs-4.18.0-372.19.1.el8_6.x86_64                                                   299/303
+  Running scriptlet: kernel-tools-libs-4.18.0-372.19.1.el8_6.x86_64                                                   299/303
+  Cleanup          : runc-1:1.1.3-2.module_el8.6.0+3070+1510fbd1.x86_64                                               300/303
+  Cleanup          : libsemanage-2.9-8.el8.x86_64                                                                     301/303
+  Cleanup          : kpartx-0.8.4-22.el8_6.1.x86_64                                                                   302/303
+  Cleanup          : bind-export-libs-32:9.11.36-3.el8.x86_64                                                         303/303
+  Running scriptlet: bind-export-libs-32:9.11.36-3.el8.x86_64                                                         303/303
+  Running scriptlet: libwbclient-4.15.5-10.el8_6.x86_64                                                               303/303
+  Running scriptlet: container-selinux-2:2.189.0-1.module_el8.6.0+3336+00d107d5.noarch                                303/303
+  Running scriptlet: libvirt-daemon-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                                     303/303
+  Running scriptlet: libvirt-daemon-driver-storage-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      303/303
+  Running scriptlet: libvirt-daemon-driver-interface-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                    303/303
+  Running scriptlet: libvirt-daemon-driver-nodedev-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      303/303
+  Running scriptlet: libvirt-daemon-driver-nwfilter-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                     303/303
+  Running scriptlet: libvirt-daemon-driver-secret-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                       303/303
+  Running scriptlet: libvirt-daemon-driver-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      303/303
+  Running scriptlet: nss-3.79.0-10.el8_6.x86_64                                                                       303/303
+  Running scriptlet: swtpm-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64                             303/303
+  Running scriptlet: libvirt-daemon-driver-qemu-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                         303/303
+  Running scriptlet: kernel-core-4.18.0-372.32.1.el8_6.x86_64                                                         303/303
+  Running scriptlet: ca-certificates-2022.2.54-80.2.el8_6.noarch                                                      303/303
+  Running scriptlet: java-1.8.0-openjdk-headless-1:1.8.0.352.b08-2.el8_6.x86_64                                       303/303
+  Running scriptlet: firefox-102.4.0-1.el8_6.alma.x86_64                                                              303/303
+  Running scriptlet: libvirt-daemon-config-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      303/303
+  Running scriptlet: bind-export-libs-32:9.11.36-3.el8.x86_64                                                         303/303
+  Running scriptlet: glib2-2.56.4-158.el8_6.1.x86_64                                                                  303/303
+  Running scriptlet: systemd-239-58.el8_6.8.x86_64                                                                    303/303
+Couldn't write '1' to 'vm/unprivileged_userfaultfd', ignoring: No such file or directory
+
+  Running scriptlet: systemd-udev-239-58.el8_6.8.x86_64                                                               303/303
+  Verifying        : kernel-4.18.0-372.32.1.el8_6.x86_64                                                                1/303
+  Verifying        : kernel-core-4.18.0-372.32.1.el8_6.x86_64                                                           2/303
+  Verifying        : kernel-devel-4.18.0-372.32.1.el8_6.x86_64                                                          3/303
+  Verifying        : kernel-modules-4.18.0-372.32.1.el8_6.x86_64                                                        4/303
+  Verifying        : libatomic-8.5.0-10.1.el8_6.alma.x86_64                                                             5/303
+  Verifying        : NetworkManager-1:1.36.0-9.el8_6.x86_64                                                             6/303
+  Verifying        : NetworkManager-1:1.36.0-7.el8_6.x86_64                                                             7/303
+  Verifying        : NetworkManager-adsl-1:1.36.0-9.el8_6.x86_64                                                        8/303
+  Verifying        : NetworkManager-adsl-1:1.36.0-7.el8_6.x86_64                                                        9/303
+  Verifying        : NetworkManager-bluetooth-1:1.36.0-9.el8_6.x86_64                                                  10/303
+  Verifying        : NetworkManager-bluetooth-1:1.36.0-7.el8_6.x86_64                                                  11/303
+  Verifying        : NetworkManager-config-server-1:1.36.0-9.el8_6.noarch                                              12/303
+  Verifying        : NetworkManager-config-server-1:1.36.0-7.el8_6.noarch                                              13/303
+  Verifying        : NetworkManager-initscripts-updown-1:1.36.0-9.el8_6.noarch                                         14/303
+  Verifying        : NetworkManager-initscripts-updown-1:1.36.0-7.el8_6.noarch                                         15/303
+  Verifying        : NetworkManager-libnm-1:1.36.0-9.el8_6.x86_64                                                      16/303
+  Verifying        : NetworkManager-libnm-1:1.36.0-7.el8_6.x86_64                                                      17/303
+  Verifying        : NetworkManager-team-1:1.36.0-9.el8_6.x86_64                                                       18/303
+  Verifying        : NetworkManager-team-1:1.36.0-7.el8_6.x86_64                                                       19/303
+  Verifying        : NetworkManager-tui-1:1.36.0-9.el8_6.x86_64                                                        20/303
+  Verifying        : NetworkManager-tui-1:1.36.0-7.el8_6.x86_64                                                        21/303
+  Verifying        : NetworkManager-wifi-1:1.36.0-9.el8_6.x86_64                                                       22/303
+  Verifying        : NetworkManager-wifi-1:1.36.0-7.el8_6.x86_64                                                       23/303
+  Verifying        : NetworkManager-wwan-1:1.36.0-9.el8_6.x86_64                                                       24/303
+  Verifying        : NetworkManager-wwan-1:1.36.0-7.el8_6.x86_64                                                       25/303
+  Verifying        : bind-export-libs-32:9.11.36-3.el8_6.1.x86_64                                                      26/303
+  Verifying        : bind-export-libs-32:9.11.36-3.el8.x86_64                                                          27/303
+  Verifying        : bpftool-4.18.0-372.32.1.el8_6.x86_64                                                              28/303
+  Verifying        : bpftool-4.18.0-372.19.1.el8_6.x86_64                                                              29/303
+  Verifying        : ca-certificates-2022.2.54-80.2.el8_6.noarch                                                       30/303
+  Verifying        : ca-certificates-2021.2.50-80.0.el8_4.noarch                                                       31/303
+  Verifying        : cockpit-264.2-1.el8_6.x86_64                                                                      32/303
+  Verifying        : cockpit-264.1-1.el8.x86_64                                                                        33/303
+  Verifying        : cockpit-bridge-264.2-1.el8_6.x86_64                                                               34/303
+  Verifying        : cockpit-bridge-264.1-1.el8.x86_64                                                                 35/303
+  Verifying        : cockpit-system-264.2-1.el8_6.noarch                                                               36/303
+  Verifying        : cockpit-system-264.1-1.el8.noarch                                                                 37/303
+  Verifying        : cockpit-ws-264.2-1.el8_6.x86_64                                                                   38/303
+  Verifying        : cockpit-ws-264.1-1.el8.x86_64                                                                     39/303
+  Verifying        : device-mapper-multipath-0.8.4-22.el8_6.2.x86_64                                                   40/303
+  Verifying        : device-mapper-multipath-0.8.4-22.el8_6.1.x86_64                                                   41/303
+  Verifying        : device-mapper-multipath-libs-0.8.4-22.el8_6.2.x86_64                                              42/303
+  Verifying        : device-mapper-multipath-libs-0.8.4-22.el8_6.1.x86_64                                              43/303
+  Verifying        : expat-2.2.5-8.el8_6.3.x86_64                                                                      44/303
+  Verifying        : expat-2.2.5-8.el8_6.2.x86_64                                                                      45/303
+  Verifying        : glib2-2.56.4-158.el8_6.1.x86_64                                                                   46/303
+  Verifying        : glib2-2.56.4-158.el8.x86_64                                                                       47/303
+  Verifying        : gnupg2-2.2.20-3.el8_6.x86_64                                                                      48/303
+  Verifying        : gnupg2-2.2.20-2.el8.x86_64                                                                        49/303
+  Verifying        : gnupg2-smime-2.2.20-3.el8_6.x86_64                                                                50/303
+  Verifying        : gnupg2-smime-2.2.20-2.el8.x86_64                                                                  51/303
+  Verifying        : gnutls-3.6.16-5.el8_6.x86_64                                                                      52/303
+  Verifying        : gnutls-3.6.16-4.el8.x86_64                                                                        53/303
+  Verifying        : initscripts-10.00.17-1.el8_6.2.x86_64                                                             54/303
+  Verifying        : initscripts-10.00.15-1.el8.x86_64                                                                 55/303
+  Verifying        : iproute-5.15.0-4.el8_6.1.x86_64                                                                   56/303
+  Verifying        : iproute-5.15.0-4.el8.x86_64                                                                       57/303
+  Verifying        : iproute-tc-5.15.0-4.el8_6.1.x86_64                                                                58/303
+  Verifying        : iproute-tc-5.15.0-4.el8.x86_64                                                                    59/303
+  Verifying        : iwl100-firmware-39.31.5.1-108.el8_6.1.noarch                                                      60/303
+  Verifying        : iwl100-firmware-39.31.5.1-107.el8.1.noarch                                                        61/303
+  Verifying        : iwl1000-firmware-1:39.31.5.1-108.el8_6.1.noarch                                                   62/303
+  Verifying        : iwl1000-firmware-1:39.31.5.1-107.el8.1.noarch                                                     63/303
+  Verifying        : iwl105-firmware-18.168.6.1-108.el8_6.1.noarch                                                     64/303
+  Verifying        : iwl105-firmware-18.168.6.1-107.el8.1.noarch                                                       65/303
+  Verifying        : iwl135-firmware-18.168.6.1-108.el8_6.1.noarch                                                     66/303
+  Verifying        : iwl135-firmware-18.168.6.1-107.el8.1.noarch                                                       67/303
+  Verifying        : iwl2000-firmware-18.168.6.1-108.el8_6.1.noarch                                                    68/303
+  Verifying        : iwl2000-firmware-18.168.6.1-107.el8.1.noarch                                                      69/303
+  Verifying        : iwl2030-firmware-18.168.6.1-108.el8_6.1.noarch                                                    70/303
+  Verifying        : iwl2030-firmware-18.168.6.1-107.el8.1.noarch                                                      71/303
+  Verifying        : iwl3160-firmware-1:25.30.13.0-108.el8_6.1.noarch                                                  72/303
+  Verifying        : iwl3160-firmware-1:25.30.13.0-107.el8.1.noarch                                                    73/303
+  Verifying        : iwl3945-firmware-15.32.2.9-108.el8_6.1.noarch                                                     74/303
+  Verifying        : iwl3945-firmware-15.32.2.9-107.el8.1.noarch                                                       75/303
+  Verifying        : iwl4965-firmware-228.61.2.24-108.el8_6.1.noarch                                                   76/303
+  Verifying        : iwl4965-firmware-228.61.2.24-107.el8.1.noarch                                                     77/303
+  Verifying        : iwl5000-firmware-8.83.5.1_1-108.el8_6.1.noarch                                                    78/303
+  Verifying        : iwl5000-firmware-8.83.5.1_1-107.el8.1.noarch                                                      79/303
+  Verifying        : iwl5150-firmware-8.24.2.2-108.el8_6.1.noarch                                                      80/303
+  Verifying        : iwl5150-firmware-8.24.2.2-107.el8.1.noarch                                                        81/303
+  Verifying        : iwl6000-firmware-9.221.4.1-108.el8_6.1.noarch                                                     82/303
+  Verifying        : iwl6000-firmware-9.221.4.1-107.el8.1.noarch                                                       83/303
+  Verifying        : iwl6000g2a-firmware-18.168.6.1-108.el8_6.1.noarch                                                 84/303
+  Verifying        : iwl6000g2a-firmware-18.168.6.1-107.el8.1.noarch                                                   85/303
+  Verifying        : iwl6000g2b-firmware-18.168.6.1-108.el8_6.1.noarch                                                 86/303
+  Verifying        : iwl6000g2b-firmware-18.168.6.1-107.el8.1.noarch                                                   87/303
+  Verifying        : iwl6050-firmware-41.28.5.1-108.el8_6.1.noarch                                                     88/303
+  Verifying        : iwl6050-firmware-41.28.5.1-107.el8.1.noarch                                                       89/303
+  Verifying        : iwl7260-firmware-1:25.30.13.0-108.el8_6.1.noarch                                                  90/303
+  Verifying        : iwl7260-firmware-1:25.30.13.0-107.el8.1.noarch                                                    91/303
+  Verifying        : kernel-headers-4.18.0-372.32.1.el8_6.x86_64                                                       92/303
+  Verifying        : kernel-headers-4.18.0-372.19.1.el8_6.x86_64                                                       93/303
+  Verifying        : kernel-tools-4.18.0-372.32.1.el8_6.x86_64                                                         94/303
+  Verifying        : kernel-tools-4.18.0-372.19.1.el8_6.x86_64                                                         95/303
+  Verifying        : kernel-tools-libs-4.18.0-372.32.1.el8_6.x86_64                                                    96/303
+  Verifying        : kernel-tools-libs-4.18.0-372.19.1.el8_6.x86_64                                                    97/303
+  Verifying        : kpartx-0.8.4-22.el8_6.2.x86_64                                                                    98/303
+  Verifying        : kpartx-0.8.4-22.el8_6.1.x86_64                                                                    99/303
+  Verifying        : libdnf-0.63.0-8.2.el8_6.alma.x86_64                                                              100/303
+  Verifying        : libdnf-0.63.0-8.1.el8_6.alma.x86_64                                                              101/303
+  Verifying        : libertas-usb8388-firmware-2:20220210-108.git6342082c.el8_6.noarch                                102/303
+  Verifying        : libertas-usb8388-firmware-2:20220210-107.git6342082c.el8.noarch                                  103/303
+  Verifying        : libksba-1.3.5-8.el8_6.x86_64                                                                     104/303
+  Verifying        : libksba-1.3.5-7.el8.x86_64                                                                       105/303
+  Verifying        : libsemanage-2.9-9.el8_6.x86_64                                                                   106/303
+  Verifying        : libsemanage-2.9-8.el8.x86_64                                                                     107/303
+  Verifying        : libsmbclient-4.15.5-10.el8_6.x86_64                                                              108/303
+  Verifying        : libsmbclient-4.15.5-8.el8_6.x86_64                                                               109/303
+  Verifying        : libwbclient-4.15.5-10.el8_6.x86_64                                                               110/303
+  Verifying        : libwbclient-4.15.5-8.el8_6.x86_64                                                                111/303
+  Verifying        : linux-firmware-20220210-108.git6342082c.el8_6.noarch                                             112/303
+  Verifying        : linux-firmware-20220210-107.git6342082c.el8.noarch                                               113/303
+  Verifying        : pam-1.3.1-16.el8_6.1.x86_64                                                                      114/303
+  Verifying        : pam-1.3.1-16.el8.x86_64                                                                          115/303
+  Verifying        : platform-python-3.6.8-47.el8_6.alma.x86_64                                                       116/303
+  Verifying        : platform-python-3.6.8-45.el8.alma.x86_64                                                         117/303
+  Verifying        : python3-hawkey-0.63.0-8.2.el8_6.alma.x86_64                                                      118/303
+  Verifying        : python3-hawkey-0.63.0-8.1.el8_6.alma.x86_64                                                      119/303
+  Verifying        : python3-libdnf-0.63.0-8.2.el8_6.alma.x86_64                                                      120/303
+  Verifying        : python3-libdnf-0.63.0-8.1.el8_6.alma.x86_64                                                      121/303
+  Verifying        : python3-libs-3.6.8-47.el8_6.alma.x86_64                                                          122/303
+  Verifying        : python3-libs-3.6.8-45.el8.alma.x86_64                                                            123/303
+  Verifying        : python3-libsemanage-2.9-9.el8_6.x86_64                                                           124/303
+  Verifying        : python3-libsemanage-2.9-8.el8.x86_64                                                             125/303
+  Verifying        : python3-perf-4.18.0-372.32.1.el8_6.x86_64                                                        126/303
+  Verifying        : python3-perf-4.18.0-372.19.1.el8_6.x86_64                                                        127/303
+  Verifying        : python3-rpm-4.14.3-24.el8_6.x86_64                                                               128/303
+  Verifying        : python3-rpm-4.14.3-23.el8.x86_64                                                                 129/303
+  Verifying        : rpm-4.14.3-24.el8_6.x86_64                                                                       130/303
+  Verifying        : rpm-4.14.3-23.el8.x86_64                                                                         131/303
+  Verifying        : rpm-build-libs-4.14.3-24.el8_6.x86_64                                                            132/303
+  Verifying        : rpm-build-libs-4.14.3-23.el8.x86_64                                                              133/303
+  Verifying        : rpm-libs-4.14.3-24.el8_6.x86_64                                                                  134/303
+  Verifying        : rpm-libs-4.14.3-23.el8.x86_64                                                                    135/303
+  Verifying        : rpm-plugin-selinux-4.14.3-24.el8_6.x86_64                                                        136/303
+  Verifying        : rpm-plugin-selinux-4.14.3-23.el8.x86_64                                                          137/303
+  Verifying        : rpm-plugin-systemd-inhibit-4.14.3-24.el8_6.x86_64                                                138/303
+  Verifying        : rpm-plugin-systemd-inhibit-4.14.3-23.el8.x86_64                                                  139/303
+  Verifying        : rpm-sign-4.14.3-24.el8_6.x86_64                                                                  140/303
+  Verifying        : rpm-sign-4.14.3-23.el8.x86_64                                                                    141/303
+  Verifying        : samba-client-4.15.5-10.el8_6.x86_64                                                              142/303
+  Verifying        : samba-client-4.15.5-8.el8_6.x86_64                                                               143/303
+  Verifying        : samba-client-libs-4.15.5-10.el8_6.x86_64                                                         144/303
+  Verifying        : samba-client-libs-4.15.5-8.el8_6.x86_64                                                          145/303
+  Verifying        : samba-common-4.15.5-10.el8_6.noarch                                                              146/303
+  Verifying        : samba-common-4.15.5-8.el8_6.noarch                                                               147/303
+  Verifying        : samba-common-libs-4.15.5-10.el8_6.x86_64                                                         148/303
+  Verifying        : samba-common-libs-4.15.5-8.el8_6.x86_64                                                          149/303
+  Verifying        : sos-4.2-22.el8_6.alma.noarch                                                                     150/303
+  Verifying        : sos-4.2-20.el8_6.alma.noarch                                                                     151/303
+  Verifying        : sqlite-3.26.0-16.el8_6.x86_64                                                                    152/303
+  Verifying        : sqlite-3.26.0-15.el8.x86_64                                                                      153/303
+  Verifying        : sqlite-libs-3.26.0-16.el8_6.x86_64                                                               154/303
+  Verifying        : sqlite-libs-3.26.0-15.el8.x86_64                                                                 155/303
+  Verifying        : systemd-239-58.el8_6.8.x86_64                                                                    156/303
+  Verifying        : systemd-239-58.el8_6.4.x86_64                                                                    157/303
+  Verifying        : systemd-container-239-58.el8_6.8.x86_64                                                          158/303
+  Verifying        : systemd-container-239-58.el8_6.4.x86_64                                                          159/303
+  Verifying        : systemd-libs-239-58.el8_6.8.x86_64                                                               160/303
+  Verifying        : systemd-libs-239-58.el8_6.4.x86_64                                                               161/303
+  Verifying        : systemd-pam-239-58.el8_6.8.x86_64                                                                162/303
+  Verifying        : systemd-pam-239-58.el8_6.4.x86_64                                                                163/303
+  Verifying        : systemd-udev-239-58.el8_6.8.x86_64                                                               164/303
+  Verifying        : systemd-udev-239-58.el8_6.4.x86_64                                                               165/303
+  Verifying        : tzdata-2022e-1.el8.noarch                                                                        166/303
+  Verifying        : tzdata-2022c-1.el8.noarch                                                                        167/303
+  Verifying        : zlib-1.2.11-19.el8_6.x86_64                                                                      168/303
+  Verifying        : zlib-1.2.11-18.el8_5.x86_64                                                                      169/303
+  Verifying        : zlib-devel-1.2.11-19.el8_6.x86_64                                                                170/303
+  Verifying        : zlib-devel-1.2.11-18.el8_5.x86_64                                                                171/303
+  Verifying        : bind-libs-32:9.11.36-3.el8_6.1.x86_64                                                            172/303
+  Verifying        : bind-libs-32:9.11.36-3.el8.x86_64                                                                173/303
+  Verifying        : bind-libs-lite-32:9.11.36-3.el8_6.1.x86_64                                                       174/303
+  Verifying        : bind-libs-lite-32:9.11.36-3.el8.x86_64                                                           175/303
+  Verifying        : bind-license-32:9.11.36-3.el8_6.1.noarch                                                         176/303
+  Verifying        : bind-license-32:9.11.36-3.el8.noarch                                                             177/303
+  Verifying        : bind-utils-32:9.11.36-3.el8_6.1.x86_64                                                           178/303
+  Verifying        : bind-utils-32:9.11.36-3.el8.x86_64                                                               179/303
+  Verifying        : conmon-2:2.1.3-1.module_el8.6.0+3336+00d107d5.x86_64                                             180/303
+  Verifying        : conmon-2:2.1.2-2.module_el8.6.0+3070+1510fbd1.x86_64                                             181/303
+  Verifying        : container-selinux-2:2.189.0-1.module_el8.6.0+3336+00d107d5.noarch                                182/303
+  Verifying        : container-selinux-2:2.188.0-1.module_el8.6.0+3070+1510fbd1.noarch                                183/303
+  Verifying        : containers-common-2:1-39.module_el8.6.0+3336+00d107d5.x86_64                                     184/303
+  Verifying        : containers-common-2:1-35.module_el8.6.0+3070+1510fbd1.x86_64                                     185/303
+  Verifying        : dnsmasq-2.79-21.el8_6.1.x86_64                                                                   186/303
+  Verifying        : dnsmasq-2.79-21.el8.x86_64                                                                       187/303
+  Verifying        : firefox-102.4.0-1.el8_6.alma.x86_64                                                              188/303
+  Verifying        : firefox-91.13.0-1.el8_6.alma.x86_64                                                              189/303
+  Verifying        : gnome-settings-daemon-3.32.0-16.el8_6.1.alma.x86_64                                              190/303
+  Verifying        : gnome-settings-daemon-3.32.0-16.el8.alma.x86_64                                                  191/303
+  Verifying        : gnutls-dane-3.6.16-5.el8_6.x86_64                                                                192/303
+  Verifying        : gnutls-dane-3.6.16-4.el8.x86_64                                                                  193/303
+  Verifying        : gnutls-utils-3.6.16-5.el8_6.x86_64                                                               194/303
+  Verifying        : gnutls-utils-3.6.16-4.el8.x86_64                                                                 195/303
+  Verifying        : java-1.8.0-openjdk-headless-1:1.8.0.352.b08-2.el8_6.x86_64                                       196/303
+  Verifying        : java-1.8.0-openjdk-headless-1:1.8.0.342.b07-2.el8_6.x86_64                                       197/303
+  Verifying        : libvirt-daemon-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                                     198/303
+  Verifying        : libvirt-daemon-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                                     199/303
+  Verifying        : libvirt-daemon-config-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      200/303
+  Verifying        : libvirt-daemon-config-network-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      201/303
+  Verifying        : libvirt-daemon-driver-interface-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                    202/303
+  Verifying        : libvirt-daemon-driver-interface-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                    203/303
+  Verifying        : libvirt-daemon-driver-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      204/303
+  Verifying        : libvirt-daemon-driver-network-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      205/303
+  Verifying        : libvirt-daemon-driver-nodedev-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      206/303
+  Verifying        : libvirt-daemon-driver-nodedev-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      207/303
+  Verifying        : libvirt-daemon-driver-nwfilter-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                     208/303
+  Verifying        : libvirt-daemon-driver-nwfilter-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                     209/303
+  Verifying        : libvirt-daemon-driver-qemu-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                         210/303
+  Verifying        : libvirt-daemon-driver-qemu-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                         211/303
+  Verifying        : libvirt-daemon-driver-secret-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                       212/303
+  Verifying        : libvirt-daemon-driver-secret-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                       213/303
+  Verifying        : libvirt-daemon-driver-storage-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                      214/303
+  Verifying        : libvirt-daemon-driver-storage-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                      215/303
+  Verifying        : libvirt-daemon-driver-storage-core-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                 216/303
+  Verifying        : libvirt-daemon-driver-storage-core-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                 217/303
+  Verifying        : libvirt-daemon-driver-storage-disk-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                 218/303
+  Verifying        : libvirt-daemon-driver-storage-disk-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                 219/303
+  Verifying        : libvirt-daemon-driver-storage-gluster-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64              220/303
+  Verifying        : libvirt-daemon-driver-storage-gluster-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64              221/303
+  Verifying        : libvirt-daemon-driver-storage-iscsi-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                222/303
+  Verifying        : libvirt-daemon-driver-storage-iscsi-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                223/303
+  Verifying        : libvirt-daemon-driver-storage-iscsi-direct-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64         224/303
+  Verifying        : libvirt-daemon-driver-storage-iscsi-direct-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64         225/303
+  Verifying        : libvirt-daemon-driver-storage-logical-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64              226/303
+  Verifying        : libvirt-daemon-driver-storage-logical-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64              227/303
+  Verifying        : libvirt-daemon-driver-storage-mpath-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                228/303
+  Verifying        : libvirt-daemon-driver-storage-mpath-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                229/303
+  Verifying        : libvirt-daemon-driver-storage-rbd-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                  230/303
+  Verifying        : libvirt-daemon-driver-storage-rbd-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                  231/303
+  Verifying        : libvirt-daemon-driver-storage-scsi-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                 232/303
+  Verifying        : libvirt-daemon-driver-storage-scsi-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                 233/303
+  Verifying        : libvirt-daemon-kvm-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                                 234/303
+  Verifying        : libvirt-daemon-kvm-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                                 235/303
+  Verifying        : libvirt-libs-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64                                       236/303
+  Verifying        : libvirt-libs-8.0.0-5.2.module_el8.6.0+3071+a07c0ea5.x86_64                                       237/303
+  Verifying        : nspr-4.34.0-3.el8_6.x86_64                                                                       238/303
+  Verifying        : nspr-4.32.0-1.el8_4.x86_64                                                                       239/303
+  Verifying        : nss-3.79.0-10.el8_6.x86_64                                                                       240/303
+  Verifying        : nss-3.67.0-7.el8_5.x86_64                                                                        241/303
+  Verifying        : nss-softokn-3.79.0-10.el8_6.x86_64                                                               242/303
+  Verifying        : nss-softokn-3.67.0-7.el8_5.x86_64                                                                243/303
+  Verifying        : nss-softokn-freebl-3.79.0-10.el8_6.x86_64                                                        244/303
+  Verifying        : nss-softokn-freebl-3.67.0-7.el8_5.x86_64                                                         245/303
+  Verifying        : nss-sysinit-3.79.0-10.el8_6.x86_64                                                               246/303
+  Verifying        : nss-sysinit-3.67.0-7.el8_5.x86_64                                                                247/303
+  Verifying        : nss-tools-3.79.0-10.el8_6.x86_64                                                                 248/303
+  Verifying        : nss-tools-3.67.0-7.el8_5.x86_64                                                                  249/303
+  Verifying        : nss-util-3.79.0-10.el8_6.x86_64                                                                  250/303
+  Verifying        : nss-util-3.67.0-7.el8_5.x86_64                                                                   251/303
+  Verifying        : podman-2:4.1.1-7.module_el8.6.0+3336+00d107d5.x86_64                                             252/303
+  Verifying        : podman-2:4.1.1-2.module_el8.6.0+3070+1510fbd1.x86_64                                             253/303
+  Verifying        : podman-catatonit-2:4.1.1-7.module_el8.6.0+3336+00d107d5.x86_64                                   254/303
+  Verifying        : podman-catatonit-2:4.1.1-2.module_el8.6.0+3070+1510fbd1.x86_64                                   255/303
+  Verifying        : python3-bind-32:9.11.36-3.el8_6.1.noarch                                                         256/303
+  Verifying        : python3-bind-32:9.11.36-3.el8.noarch                                                             257/303
+  Verifying        : qemu-guest-agent-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                               258/303
+  Verifying        : qemu-guest-agent-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                               259/303
+  Verifying        : qemu-img-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                       260/303
+  Verifying        : qemu-img-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                       261/303
+  Verifying        : qemu-kvm-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                       262/303
+  Verifying        : qemu-kvm-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                       263/303
+  Verifying        : qemu-kvm-block-curl-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                            264/303
+  Verifying        : qemu-kvm-block-curl-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                            265/303
+  Verifying        : qemu-kvm-block-gluster-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                         266/303
+  Verifying        : qemu-kvm-block-gluster-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                         267/303
+  Verifying        : qemu-kvm-block-iscsi-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                           268/303
+  Verifying        : qemu-kvm-block-iscsi-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                           269/303
+  Verifying        : qemu-kvm-block-rbd-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                             270/303
+  Verifying        : qemu-kvm-block-rbd-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                             271/303
+  Verifying        : qemu-kvm-block-ssh-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                             272/303
+  Verifying        : qemu-kvm-block-ssh-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                             273/303
+  Verifying        : qemu-kvm-common-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                274/303
+  Verifying        : qemu-kvm-common-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                275/303
+  Verifying        : qemu-kvm-core-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                  276/303
+  Verifying        : qemu-kvm-core-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                  277/303
+  Verifying        : qemu-kvm-docs-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                                  278/303
+  Verifying        : qemu-kvm-docs-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                                  279/303
+  Verifying        : qemu-kvm-hw-usbredir-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                           280/303
+  Verifying        : qemu-kvm-hw-usbredir-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                           281/303
+  Verifying        : qemu-kvm-ui-opengl-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                             282/303
+  Verifying        : qemu-kvm-ui-opengl-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                             283/303
+  Verifying        : qemu-kvm-ui-spice-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64                              284/303
+  Verifying        : qemu-kvm-ui-spice-15:6.2.0-11.module_el8.6.0+3071+a07c0ea5.2.x86_64                              285/303
+  Verifying        : rpm-build-4.14.3-24.el8_6.x86_64                                                                 286/303
+  Verifying        : rpm-build-4.14.3-23.el8.x86_64                                                                   287/303
+  Verifying        : runc-1:1.1.3-3.module_el8.6.0+3341+735fcc68.x86_64                                               288/303
+  Verifying        : runc-1:1.1.3-2.module_el8.6.0+3070+1510fbd1.x86_64                                               289/303
+  Verifying        : swtpm-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64                             290/303
+  Verifying        : swtpm-0.7.0-1.20211109gitb79fd91.module_el8.6.0+2880+7d9e3703.x86_64                             291/303
+  Verifying        : swtpm-libs-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64                        292/303
+  Verifying        : swtpm-libs-0.7.0-1.20211109gitb79fd91.module_el8.6.0+2880+7d9e3703.x86_64                        293/303
+  Verifying        : swtpm-tools-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64                       294/303
+  Verifying        : swtpm-tools-0.7.0-1.20211109gitb79fd91.module_el8.6.0+2880+7d9e3703.x86_64                       295/303
+  Verifying        : tzdata-java-2022e-1.el8.noarch                                                                   296/303
+  Verifying        : tzdata-java-2022c-1.el8.noarch                                                                   297/303
+  Verifying        : webkit2gtk3-2.36.7-1.el8_6.x86_64                                                                298/303
+  Verifying        : webkit2gtk3-2.34.6-1.el8.x86_64                                                                  299/303
+  Verifying        : webkit2gtk3-jsc-2.36.7-1.el8_6.x86_64                                                            300/303
+  Verifying        : webkit2gtk3-jsc-2.34.6-1.el8.x86_64                                                              301/303
+  Verifying        : epel-release-8-18.el8.noarch                                                                     302/303
+  Verifying        : epel-release-8-17.el8.noarch                                                                     303/303
+
+Upgraded:
+  NetworkManager-1:1.36.0-9.el8_6.x86_64
+  NetworkManager-adsl-1:1.36.0-9.el8_6.x86_64
+  NetworkManager-bluetooth-1:1.36.0-9.el8_6.x86_64
+  NetworkManager-config-server-1:1.36.0-9.el8_6.noarch
+  NetworkManager-initscripts-updown-1:1.36.0-9.el8_6.noarch
+  NetworkManager-libnm-1:1.36.0-9.el8_6.x86_64
+  NetworkManager-team-1:1.36.0-9.el8_6.x86_64
+  NetworkManager-tui-1:1.36.0-9.el8_6.x86_64
+  NetworkManager-wifi-1:1.36.0-9.el8_6.x86_64
+  NetworkManager-wwan-1:1.36.0-9.el8_6.x86_64
+  bind-export-libs-32:9.11.36-3.el8_6.1.x86_64
+  bind-libs-32:9.11.36-3.el8_6.1.x86_64
+  bind-libs-lite-32:9.11.36-3.el8_6.1.x86_64
+  bind-license-32:9.11.36-3.el8_6.1.noarch
+  bind-utils-32:9.11.36-3.el8_6.1.x86_64
+  bpftool-4.18.0-372.32.1.el8_6.x86_64
+  ca-certificates-2022.2.54-80.2.el8_6.noarch
+  cockpit-264.2-1.el8_6.x86_64
+  cockpit-bridge-264.2-1.el8_6.x86_64
+  cockpit-system-264.2-1.el8_6.noarch
+  cockpit-ws-264.2-1.el8_6.x86_64
+  conmon-2:2.1.3-1.module_el8.6.0+3336+00d107d5.x86_64
+  container-selinux-2:2.189.0-1.module_el8.6.0+3336+00d107d5.noarch
+  containers-common-2:1-39.module_el8.6.0+3336+00d107d5.x86_64
+  device-mapper-multipath-0.8.4-22.el8_6.2.x86_64
+  device-mapper-multipath-libs-0.8.4-22.el8_6.2.x86_64
+  dnsmasq-2.79-21.el8_6.1.x86_64
+  epel-release-8-18.el8.noarch
+  expat-2.2.5-8.el8_6.3.x86_64
+  firefox-102.4.0-1.el8_6.alma.x86_64
+  glib2-2.56.4-158.el8_6.1.x86_64
+  gnome-settings-daemon-3.32.0-16.el8_6.1.alma.x86_64
+  gnupg2-2.2.20-3.el8_6.x86_64
+  gnupg2-smime-2.2.20-3.el8_6.x86_64
+  gnutls-3.6.16-5.el8_6.x86_64
+  gnutls-dane-3.6.16-5.el8_6.x86_64
+  gnutls-utils-3.6.16-5.el8_6.x86_64
+  initscripts-10.00.17-1.el8_6.2.x86_64
+  iproute-5.15.0-4.el8_6.1.x86_64
+  iproute-tc-5.15.0-4.el8_6.1.x86_64
+  iwl100-firmware-39.31.5.1-108.el8_6.1.noarch
+  iwl1000-firmware-1:39.31.5.1-108.el8_6.1.noarch
+  iwl105-firmware-18.168.6.1-108.el8_6.1.noarch
+  iwl135-firmware-18.168.6.1-108.el8_6.1.noarch
+  iwl2000-firmware-18.168.6.1-108.el8_6.1.noarch
+  iwl2030-firmware-18.168.6.1-108.el8_6.1.noarch
+  iwl3160-firmware-1:25.30.13.0-108.el8_6.1.noarch
+  iwl3945-firmware-15.32.2.9-108.el8_6.1.noarch
+  iwl4965-firmware-228.61.2.24-108.el8_6.1.noarch
+  iwl5000-firmware-8.83.5.1_1-108.el8_6.1.noarch
+  iwl5150-firmware-8.24.2.2-108.el8_6.1.noarch
+  iwl6000-firmware-9.221.4.1-108.el8_6.1.noarch
+  iwl6000g2a-firmware-18.168.6.1-108.el8_6.1.noarch
+  iwl6000g2b-firmware-18.168.6.1-108.el8_6.1.noarch
+  iwl6050-firmware-41.28.5.1-108.el8_6.1.noarch
+  iwl7260-firmware-1:25.30.13.0-108.el8_6.1.noarch
+  java-1.8.0-openjdk-headless-1:1.8.0.352.b08-2.el8_6.x86_64
+  kernel-headers-4.18.0-372.32.1.el8_6.x86_64
+  kernel-tools-4.18.0-372.32.1.el8_6.x86_64
+  kernel-tools-libs-4.18.0-372.32.1.el8_6.x86_64
+  kpartx-0.8.4-22.el8_6.2.x86_64
+  libdnf-0.63.0-8.2.el8_6.alma.x86_64
+  libertas-usb8388-firmware-2:20220210-108.git6342082c.el8_6.noarch
+  libksba-1.3.5-8.el8_6.x86_64
+  libsemanage-2.9-9.el8_6.x86_64
+  libsmbclient-4.15.5-10.el8_6.x86_64
+  libvirt-daemon-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-config-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-interface-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-network-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-nodedev-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-nwfilter-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-qemu-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-secret-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-core-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-disk-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-gluster-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-iscsi-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-iscsi-direct-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-logical-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-mpath-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-rbd-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-driver-storage-scsi-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-daemon-kvm-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libvirt-libs-8.0.0-5.5.module_el8.6.0+3337+88d7cc9c.x86_64
+  libwbclient-4.15.5-10.el8_6.x86_64
+  linux-firmware-20220210-108.git6342082c.el8_6.noarch
+  nspr-4.34.0-3.el8_6.x86_64
+  nss-3.79.0-10.el8_6.x86_64
+  nss-softokn-3.79.0-10.el8_6.x86_64
+  nss-softokn-freebl-3.79.0-10.el8_6.x86_64
+  nss-sysinit-3.79.0-10.el8_6.x86_64
+  nss-tools-3.79.0-10.el8_6.x86_64
+  nss-util-3.79.0-10.el8_6.x86_64
+  pam-1.3.1-16.el8_6.1.x86_64
+  platform-python-3.6.8-47.el8_6.alma.x86_64
+  podman-2:4.1.1-7.module_el8.6.0+3336+00d107d5.x86_64
+  podman-catatonit-2:4.1.1-7.module_el8.6.0+3336+00d107d5.x86_64
+  python3-bind-32:9.11.36-3.el8_6.1.noarch
+  python3-hawkey-0.63.0-8.2.el8_6.alma.x86_64
+  python3-libdnf-0.63.0-8.2.el8_6.alma.x86_64
+  python3-libs-3.6.8-47.el8_6.alma.x86_64
+  python3-libsemanage-2.9-9.el8_6.x86_64
+  python3-perf-4.18.0-372.32.1.el8_6.x86_64
+  python3-rpm-4.14.3-24.el8_6.x86_64
+  qemu-guest-agent-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-img-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-block-curl-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-block-gluster-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-block-iscsi-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-block-rbd-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-block-ssh-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-common-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-core-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-docs-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-hw-usbredir-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-ui-opengl-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  qemu-kvm-ui-spice-15:6.2.0-11.module_el8.6.0+3337+88d7cc9c.6.x86_64
+  rpm-4.14.3-24.el8_6.x86_64
+  rpm-build-4.14.3-24.el8_6.x86_64
+  rpm-build-libs-4.14.3-24.el8_6.x86_64
+  rpm-libs-4.14.3-24.el8_6.x86_64
+  rpm-plugin-selinux-4.14.3-24.el8_6.x86_64
+  rpm-plugin-systemd-inhibit-4.14.3-24.el8_6.x86_64
+  rpm-sign-4.14.3-24.el8_6.x86_64
+  runc-1:1.1.3-3.module_el8.6.0+3341+735fcc68.x86_64
+  samba-client-4.15.5-10.el8_6.x86_64
+  samba-client-libs-4.15.5-10.el8_6.x86_64
+  samba-common-4.15.5-10.el8_6.noarch
+  samba-common-libs-4.15.5-10.el8_6.x86_64
+  sos-4.2-22.el8_6.alma.noarch
+  sqlite-3.26.0-16.el8_6.x86_64
+  sqlite-libs-3.26.0-16.el8_6.x86_64
+  swtpm-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64
+  swtpm-libs-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64
+  swtpm-tools-0.7.0-3.20211109gitb79fd91.module_el8.6.0+3259+f1e4044a.x86_64
+  systemd-239-58.el8_6.8.x86_64
+  systemd-container-239-58.el8_6.8.x86_64
+  systemd-libs-239-58.el8_6.8.x86_64
+  systemd-pam-239-58.el8_6.8.x86_64
+  systemd-udev-239-58.el8_6.8.x86_64
+  tzdata-2022e-1.el8.noarch
+  tzdata-java-2022e-1.el8.noarch
+  webkit2gtk3-2.36.7-1.el8_6.x86_64
+  webkit2gtk3-jsc-2.36.7-1.el8_6.x86_64
+  zlib-1.2.11-19.el8_6.x86_64
+  zlib-devel-1.2.11-19.el8_6.x86_64
+Installed:
+  kernel-4.18.0-372.32.1.el8_6.x86_64                          kernel-core-4.18.0-372.32.1.el8_6.x86_64
+  kernel-devel-4.18.0-372.32.1.el8_6.x86_64                    kernel-modules-4.18.0-372.32.1.el8_6.x86_64
+  libatomic-8.5.0-10.1.el8_6.alma.x86_64
+
+Complete!
+[generic@csa-4485-08 ~]$ sudo yum install apache2
+Last metadata expiration check: 2:44:15 ago on Wed 02 Nov 2022 08:39:34 PM CDT.
+No match for argument: apache2
+Error: Unable to find a match: apache2
+[generic@csa-4485-08 ~]$ sudo yum install apache
+Last metadata expiration check: 2:44:28 ago on Wed 02 Nov 2022 08:39:34 PM CDT.
+No match for argument: apache
+Error: Unable to find a match: apache
+[generic@csa-4485-08 ~]$ yum install httpd
+Error: This command has to be run with superuser privileges (under the root user on most systems).
+[generic@csa-4485-08 ~]$ sudo yum install httpd
+Last metadata expiration check: 2:47:52 ago on Wed 02 Nov 2022 08:39:34 PM CDT.
+Package httpd-2.4.37-47.module_el8.6.0+2935+fb177b09.2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[generic@csa-4485-08 ~]$ systemctl start httpd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'httpd.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): cs100Failed to start httpd.service: Connection timed out
+See system logs and 'systemctl status httpd.service' for details.
+[generic@csa-4485-08 ~]$ systemctl start httpd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'httpd.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): cs1000
+Invalid response `cs1000'.
+==== AUTHENTICATION CANCELED ====
+Failed to start httpd.service: Access denied
+See system logs and 'systemctl status httpd.service' for details.
+[generic@csa-4485-08 ~]$ ^C
+[generic@csa-4485-08 ~]$ systemctl daemon-reexec
+==== AUTHENTICATING FOR org.freedesktop.systemd1.reload-daemon ====
+Authentication is required to reload the systemd state.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): cs1000
+Invalid response `cs1000'.
+==== AUTHENTICATION CANCELED ====
+Failed to reload daemon: Access denied
+[generic@csa-4485-08 ~]$ sudo dnf install httpd
+Last metadata expiration check: 2:52:46 ago on Wed 02 Nov 2022 08:39:34 PM CDT.
+Package httpd-2.4.37-47.module_el8.6.0+2935+fb177b09.2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[generic@csa-4485-08 ~]$ sudo firewall-cmd --permanent --add-service=https
+FirewallD is not running
+[generic@csa-4485-08 ~]$ systemctl start httpd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'httpd.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 1
+Password: Failed to start httpd.service: Connection timed out
+See system logs and 'systemctl status httpd.service' for details.
+[generic@csa-4485-08 ~]$ systemctl start httpd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'httpd.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password:
+==== AUTHENTICATION COMPLETE ====
+[generic@csa-4485-08 ~]$ sudo systemctl status httpd
+? httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-13 11:13:19 CDT; 1 months 20 days ago
+     Docs: man:httpd.service(8)
+ Main PID: 1077 (httpd)
+   Status: "Total requests: 6741; Idle/Busy workers 100/0;Requests/sec: 0.00154; Bytes served/sec:   6 B/sec"
+    Tasks: 214 (limit: 49148)
+   Memory: 35.9M
+   CGroup: /system.slice/httpd.service
+           +-  1077 /usr/sbin/httpd -DFOREGROUND
+           +-599572 /usr/sbin/httpd -DFOREGROUND
+           +-599573 /usr/sbin/httpd -DFOREGROUND
+           +-599574 /usr/sbin/httpd -DFOREGROUND
+           +-599575 /usr/sbin/httpd -DFOREGROUND
+           +-599576 /usr/sbin/httpd -DFOREGROUND
+
+Oct 17 03:11:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 23 03:32:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 30 03:27:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloading The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 systemd[1]: Reloaded The Apache HTTP Server.
+Oct 31 03:06:01 csa-4485-08 httpd[1077]: Server configured, listening on: port 443, port 80
+[generic@csa-4485-08 ~]$ hostname -I
+10.176.67.71 192.168.122.1
+[generic@csa-4485-08 ~]$ http://10.176.67.71
+-bash: http://10.176.67.71: No such file or directory
+[generic@csa-4485-08 ~]$ http://192.168.122.1
+-bash: http://192.168.122.1: No such file or directory
+[generic@csa-4485-08 ~]$ curl -4 icanhazip.com
+129.110.242.176
+[generic@csa-4485-08 ~]$ http://129.110.242.176
+-bash: http://129.110.242.176: No such file or directory
+[generic@csa-4485-08 ~]$ ^C
+[generic@csa-4485-08 ~]$ http://129.110.242.176
+-bash: http://129.110.242.176: No such file or directory
+[generic@csa-4485-08 ~]$ yum install httpd
+Error: This command has to be run with superuser privileges (under the root user on most systems).
+[generic@csa-4485-08 ~]$ sudo yum install httpd
+Last metadata expiration check: 3:19:56 ago on Wed 02 Nov 2022 08:39:34 PM CDT.
+Package httpd-2.4.37-47.module_el8.6.0+2935+fb177b09.2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[generic@csa-4485-08 ~]$ systemctl start httpd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentication is required to start 'httpd.service'.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password:
+==== AUTHENTICATION COMPLETE ====
+[generic@csa-4485-08 ~]$ systemctl enable httpd.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-unit-files ====
+Authentication is required to manage system service or unit files.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password:
+==== AUTHENTICATION COMPLETE ====
+==== AUTHENTICATING FOR org.freedesktop.systemd1.reload-daemon ====
+Authentication is required to reload the systemd state.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password:
+==== AUTHENTICATION COMPLETE ====
+[generic@csa-4485-08 ~]$ firewall-cmd --add-service=http --permanent
+FirewallD is not running
+[generic@csa-4485-08 ~]$ firewall-cmd --reload
+FirewallD is not running
+[generic@csa-4485-08 ~]$ ^C
+[generic@csa-4485-08 ~]$ rpm -qa firewalld
+firewalld-0.9.3-13.el8.noarch
+[generic@csa-4485-08 ~]$ sudo systemctl start firewalld
+[generic@csa-4485-08 ~]$ sudo systemctl enable firewalld
+Created symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service ? /usr/lib/systemd/system/firewalld.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/firewalld.service ? /usr/lib/systemd/system/firewalld.service.
+[generic@csa-4485-08 ~]$ sudo systemctl status firewalld
+? firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2022-11-03 00:04:11 CDT; 59s ago
+     Docs: man:firewalld(1)
+ Main PID: 700679 (firewalld)
+    Tasks: 2 (limit: 49148)
+   Memory: 26.9M
+   CGroup: /system.slice/firewalld.service
+           +-700679 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+
+Nov 03 00:04:10 csa-4485-08 systemd[1]: Starting firewalld - dynamic firewall daemon...
+Nov 03 00:04:11 csa-4485-08 systemd[1]: Started firewalld - dynamic firewall daemon.
+Nov 03 00:04:11 csa-4485-08 firewalld[700679]: WARNING: AllowZoneDrifting is enabled. This is considered an insecure configur>
+...skipping...
+? firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2022-11-03 00:04:11 CDT; 59s ago
+     Docs: man:firewalld(1)
+ Main PID: 700679 (firewalld)
+    Tasks: 2 (limit: 49148)
+   Memory: 26.9M
+   CGroup: /system.slice/firewalld.service
+           +-700679 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+
+Nov 03 00:04:10 csa-4485-08 systemd[1]: Starting firewalld - dynamic firewall daemon...
+Nov 03 00:04:11 csa-4485-08 systemd[1]: Started firewalld - dynamic firewall daemon.
+Nov 03 00:04:11 csa-4485-08 firewalld[700679]: WARNING: AllowZoneDrifting is enabled. This is considered an insecure configur>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+...skipping...
+? firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2022-11-03 00:04:11 CDT; 59s ago
+     Docs: man:firewalld(1)
+ Main PID: 700679 (firewalld)
+    Tasks: 2 (limit: 49148)
+   Memory: 26.9M
+   CGroup: /system.slice/firewalld.service
+           +-700679 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+
+Nov 03 00:04:10 csa-4485-08 systemd[1]: Starting firewalld - dynamic firewall daemon...
+Nov 03 00:04:11 csa-4485-08 systemd[1]: Started firewalld - dynamic firewall daemon.
+Nov 03 00:04:11 csa-4485-08 firewalld[700679]: WARNING: AllowZoneDrifting is enabled. This is considered an insecure configur>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+...skipping...
+? firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2022-11-03 00:04:11 CDT; 59s ago
+     Docs: man:firewalld(1)
+ Main PID: 700679 (firewalld)
+    Tasks: 2 (limit: 49148)
+   Memory: 26.9M
+   CGroup: /system.slice/firewalld.service
+           +-700679 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+
+Nov 03 00:04:10 csa-4485-08 systemd[1]: Starting firewalld - dynamic firewall daemon...
+Nov 03 00:04:11 csa-4485-08 systemd[1]: Started firewalld - dynamic firewall daemon.
+Nov 03 00:04:11 csa-4485-08 firewalld[700679]: WARNING: AllowZoneDrifting is enabled. This is considered an insecure configur>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+
+nabled; vendor preset: enabled)
+59s ago
+
+
+
+
+
+irewalld --nofork --nopid
+
+namic firewall daemon...
+amic firewall daemon.
+neDrifting is enabled. This is considered an insecure configuration option. It will be removed in a future release. Please co>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+? firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2022-11-03 00:04:11 CDT; 59s ago
+     Docs: man:firewalld(1)
+ Main PID: 700679 (firewalld)
+    Tasks: 2 (limit: 49148)
+   Memory: 26.9M
+   CGroup: /system.slice/firewalld.service
+           +-700679 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+
+Nov 03 00:04:10 csa-4485-08 systemd[1]: Starting firewalld - dynamic firewall daemon...
+Nov 03 00:04:11 csa-4485-08 systemd[1]: Started firewalld - dynamic firewall daemon.
+Nov 03 00:04:11 csa-4485-08 firewalld[700679]: WARNING: AllowZoneDrifting is enabled. This is considered an insecure configur>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+[generic@csa-4485-08 ~]$ sudo firewall-cmd --permanent --add-port=22/tcp
+success
+[generic@csa-4485-08 ~]$ systemctl enable httpd.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-unit-files ====
+Authentication is required to manage system service or unit files.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password:
+==== AUTHENTICATION COMPLETE ====
+==== AUTHENTICATING FOR org.freedesktop.systemd1.reload-daemon ====
+Authentication is required to reload the systemd state.
+Multiple identities can be used for authentication:
+ 1.  cs1000
+ 2.  Gen Eric (generic)
+Choose identity to authenticate as (1-2): 2
+Password:
+==== AUTHENTICATION COMPLETE ====
+[generic@csa-4485-08 ~]$ firewall-cmd --add-service=http --permanent
+Authorization failed.
+    Make sure polkit agent is running or run the application as superuser.
+[generic@csa-4485-08 ~]$ sudo firewall-cmd --add-service=http --permanent
+success
+[generic@csa-4485-08 ~]$ firewall-cmd --reload
+Authorization failed.
+    Make sure polkit agent is running or run the application as superuser.
+[generic@csa-4485-08 ~]$ sudo firewall-cmd --reload
+success
+[generic@csa-4485-08 ~]$ hostname -I
+10.176.67.71 192.168.122.1
+[generic@csa-4485-08 ~]$ ^C
+[generic@csa-4485-08 ~]$ script test.txt
+Script started, file is test.txt
+[generic@csa-4485-08 ~]$
