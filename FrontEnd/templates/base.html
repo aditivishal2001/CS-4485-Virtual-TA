@@ -117,18 +117,14 @@
   </head>
   <body>
     <nav>
-      <a href="/">Home</a>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('contact') }}">Contact us</a>
+      <a href="{{ url_for('resources') }}">Resources</a>
+      <a href="{{ url_for('about') }}">About the project</a>
     </nav>
     <hr />
     <div class="content">
-      <h2>Home Welcome to the Virtual TA!</h2>
-      <div class="wrapper-center">
-        <h4>CS 4349 Advanced Algorithm Design and Analysis</h4>
-        <h6>Anjum Chida</h6>
-        <p>
-          To begin chatting with the TA, click the button at the button at the
-          bottom right of the screen
-        </p>
+      {% block content %}{% endblock %}
       </div>
     </div>
     <div class="chatbox">
