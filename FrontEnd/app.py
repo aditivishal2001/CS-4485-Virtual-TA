@@ -22,6 +22,7 @@ def resources():
 
 @app.route('/about')
 def about():
+    print(1)
     return render_template('about.html')
 
 
