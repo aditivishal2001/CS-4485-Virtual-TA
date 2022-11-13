@@ -1,0 +1,44 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+<style>
+	.wrapper {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+	.wrapper p {
+		font-size: larger;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+	.wrapper p span {
+		letter-spacing: 1;
+		font-weight: 400;
+		margin-left: 4px;
+	}
+	input {
+		background-color: inherit;
+		border: none;
+		letter-spacing: 1;
+		font-size: large;
+		font-weight: 400;
+		margin-left: 4px;
+		text-decoration: underline;
+		color: #1338be;
+	}
+</style>
+<h1> Contact us</h1>
+<div class="wrapper">
+	<p>Professor: <span>Anjum Chida</span></p>
+	<p>
+		Email:
+
+		<input type="email" readonly value="anjum.chida@utdallas.edu" />
+	</p>
+	<p>Office Location: <span>972-883-2185</span></p>
+	<p>Online Office Hours: <span>In person - 11:30 am to 1:30 pm</span></p>
+	<p><span>Or by appointment, meeting can be virtual by MS Teams)</span></p>
+</div>
+<p>TA info: <span>TBD</span></p>
+{% endblock %}
