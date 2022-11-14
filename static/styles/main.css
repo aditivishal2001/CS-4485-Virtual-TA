@@ -190,19 +190,16 @@ box-shadow: var(--primaryBoxShadow);
 
 /* FOOTER */
 .chatbox__footer {
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 20px 20px;
     background: var(--secondaryGradient);
     box-shadow: var(--secondaryBoxShadow);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-top: 20px;
-}
-.chatboxfooter{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
 }
 .otherinput{
       padding: 3px 0px 6px 0px!important;

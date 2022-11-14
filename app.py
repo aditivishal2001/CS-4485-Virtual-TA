@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-
+from chat.chat import chatting
 #from chat import get_response
 
 app = Flask(__name__)
@@ -29,7 +29,8 @@ def about():
 @app.post('/predict')
 def predict():
     text = request.get_json().get("message")
-    #response = get_response(text)
+    print(chatting(text))
+    response = chatting(text)
     message = {"answer": response}
     return jsonify(message)
 

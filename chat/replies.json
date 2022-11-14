@@ -1,0 +1,63 @@
+{
+  "replies": [
+    {
+      "tag": "greetings",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Hello"
+      ],
+      "responses": [
+        "Hey",
+        "Hello, How can I help you?",
+        "Hi there, you can ask me simple questions such as the email of the professor."
+      ]
+    },
+    {
+      "tag": "bye",
+      "patterns": [
+        "Bye",
+        "Goodbye"
+      ],
+      "responses": [
+        "Bye",
+        "Have a nice day"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks", 
+        "Thank you", 
+        "That was helpful"
+      ],
+      "responses": [
+        "Any thing else I can help you with"
+      ]
+    },
+    {
+      "tag": "email",
+      "patterns": [
+        "email",
+        "email of Professor", 
+        "email of TA", 
+        "What is the email of the professor?",
+        "What is the email of the TA?"
+      ],
+      "responses": [
+        "Professor's Email is anjum.chida@utdallas.edu and TA's Email is TBD"
+      ]
+    },
+    {
+      "tag": "Binary",
+      "patterns": [
+        "Binary Search",
+        "BigO of Binary Search"
+      ],
+      "responses": [
+        "BigO of Binary Search O(log N)",
+        "Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half."
+      ]
+    }
+  ]
+}

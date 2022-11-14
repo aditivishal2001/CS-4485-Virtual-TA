@@ -49,20 +49,25 @@ class Chatbox {
 
     onSendButton(chatbox) {
         var textField = chatbox.querySelectorAll('#iccontent');
-        console.log(textField);
         let text1 = ''
         for (let i = 0; i < textField.length; i++) {
+
           var a = textField[i].innerHTML.replace('"true"','"false"');
+          a = textField[i].innerHTML.replace('<br>',' ');
+
 
           text1 += a
+
               }
+        textField = jQuery(textField).text();
+        console.log(text1)
 
 
         if (text1 === "") {
             return;
         }
 
-        let msg1 = { name: "User", message: text1 }
+        let msg1 = { name: "User", message: textField }
         this.messages.push(msg1);
 
         fetch('http://127.0.0.1:5000/predict', {
