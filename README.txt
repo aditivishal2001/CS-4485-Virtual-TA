@@ -2,7 +2,7 @@
 
 Team members: Shirley Zeng, Aditi Vishal, Meet Patel, Norah Khan, Charles Saint Pe
 
-Install PyTorch and other dependencies
+Install PyTorch and other dependencies(file requirements.txt)
 
 
 You also need nltk:
