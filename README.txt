@@ -29,4 +29,4 @@ sudo getenforce
 sudo setenforce 0
 getenforce
 
-Note: Do not have the firewalld enabled and running!
+Note: Do not enable the firewalld or configure anything for it using --permanent!
