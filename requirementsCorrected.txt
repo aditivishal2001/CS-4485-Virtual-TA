@@ -1,0 +1,27 @@
+# All these dependencies needed to be installed before any commands could be run
+alembic
+certifi
+charset-normalizer
+click
+Flask
+Flask-Migrate
+Flask-SQLAlchemy
+greenlet
+idna
+itsdangerous
+Jinja2
+joblib
+Mako
+MarkupSafe
+nltk
+numpy
+Pillow
+regex
+requests
+SQLAlchemy
+torch
+torchvision
+tqdm
+typing_extensions
+urllib3
+Werkzeug
