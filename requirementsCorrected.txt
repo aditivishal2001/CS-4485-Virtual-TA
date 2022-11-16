@@ -1,4 +1,5 @@
 # All these dependencies needed to be installed before any commands could be run
+#installing in generic or root will work
 alembic
 certifi
 charset-normalizer
