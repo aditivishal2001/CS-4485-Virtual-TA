@@ -18,7 +18,7 @@ This will dump data.pth file. And then run python app.py
 To run the website on the VM server, simply run the following commands(after logging into generic@csa-4485-08.utdallas.edu):
 sudo su -
 cd /var/www
-cd FlaskFrontBack
+cd FinalFrontBack
 flask run --host=0.0.0.0
 
 A website link will apeear. Do NOT hit Ctrl+C! This will stop the flask command running.
