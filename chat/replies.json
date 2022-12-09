@@ -230,20 +230,54 @@
       ]
     },
     {
-      "tag": "worth",
+      "tag": "exam 1 worth",
       "patterns": [
         "How much is exam 1 worth?",
-        "How much is exam 2 worth?",
-        "How much is the final exam worth?",
-        "How much is the homework worth?",
-        "How much are the quizzes and participation worth?"
+        "What's the percentage of exam 1?"
       ],
       "responses": [
-        "Exam 1 is worth 20%.",
-        "Exam 2 is worth 25%.",
-        "Exam 3/the final is worth 25%.",
-        "Homework assignments are worth 20%.",
-        "Quizzes and participation is worth 10%."
+        "Exam 1 is worth 20%."
+      ]
+    },
+    {
+      "tag": "exam 2 worth",
+      "patterns": [
+        "How much is exam 2 worth?",
+        "What's the percentage of exam 2?"
+      ],
+      "responses": [
+        "Exam 2 is worth 25%."
+      ]
+    },
+    {
+      "tag": "final exam worth",
+      "patterns": [
+        "How much is the final exam worth?",
+        "How much is exam 3 worth?",
+        "What percentage is the final exam?"
+      ],
+      "responses": [
+        "Exam 3/the final is worth 25%."
+      ]
+    },
+    {
+      "tag": "homework worth",
+      "patterns": [
+        "How much is the homework worth?",
+        "What percentage is the homework?"
+      ],
+      "responses": [
+        "Homework assignments are worth 20%."
+      ]
+    },
+    {
+      "tag": " quiz and participation worth",
+      "patterns": [
+        "How much are the quizzes and participation worth?",
+        "What percentage are the quizzes and participation?"
+      ],
+      "responses": [
+        "Quizzes and participation are worth 10%."
       ]
     },
     {
