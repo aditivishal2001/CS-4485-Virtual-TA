@@ -33,14 +33,14 @@ class Chatbox {
         // show or hides the box
         if(this.state) {
             chatbox.classList.add('chatbox--active')
-            if(contor == 0)
-          {
-            let greeting = { name: "Sam", message: 'Hi how I can help you ?' };
-            this.messages.push(greeting);
-            this.updateChatText(chatbox)
-            $('div.input').html('<span id="iccontent" class="input firstinput" contenteditable="true" > </span>')
-            contor+=1;
-          }
+          //   if(contor == 0)
+          // {
+          //   let greeting = { name: "Sam", message: 'Hi how I can help you ?' };
+          //   this.messages.push(greeting);
+          //   this.updateChatText(chatbox)
+          //   $('div.input').html('<input type="text" id="iiccontent" class="input firstinput" placeholder="type your message" />')
+          //   contor+=1;
+          // }
 
         } else {
             chatbox.classList.remove('chatbox--active')
@@ -48,31 +48,34 @@ class Chatbox {
     }
 
     onSendButton(chatbox) {
-        var textField = chatbox.querySelectorAll('#iccontent');
-        let text1 = ''
-        for (let i = 0; i < textField.length; i++) {
+      var message = '';
+      var itextField = chatbox.querySelector('#iiccontent');
+      console.log(itextField);
+      if(itextField !== null){
+        message = itextField.value;
+      }
 
-          var a = textField[i].innerHTML.replace('"true"','"false"');
-          a = textField[i].innerHTML.replace('<br>',' ');
+        var textField = chatbox.querySelector('#iccontent');
+
+        if(textField !== null){
+          var a = textField.innerHTML.replaceAll('"true"','"false"');
+        //  message = jQuery(a).text()
+        message = a;
+        }
+
+        console.log(message)
 
 
-          text1 += a
-
-              }
-        textField = jQuery(textField).text();
-        console.log(text1)
-
-
-        if (text1 === "") {
+        if (message === "") {
             return;
         }
 
-        let msg1 = { name: "User", message: textField }
+        let msg1 = { name: "User", message: message }
         this.messages.push(msg1);
 
         fetch('http://127.0.0.1:5000/predict', {
             method: 'POST',
-            body: JSON.stringify({ message: text1 }),
+            body: JSON.stringify({ message: message }),
             mode: 'cors',
             headers: {
               'Content-Type': 'application/json'
@@ -84,12 +87,12 @@ class Chatbox {
             let msg2 = { name: "Sam", message: r.answer };
             this.messages.push(msg2);
             this.updateChatText(chatbox)
-            $('div.input').html('<span id="iccontent" class="input firstinput" contenteditable="true" > </span>')
+            $('div.input').html('<input type="text" id="iiccontent" class="input firstinput" placeholder="type your message" />')
 
         }).catch((error) => {
             console.error('Error:', error);
             this.updateChatText(chatbox)
-            $('div.input').html('<span id="iccontent" class="input firstinput" contenteditable="true" > </span>')
+            $('div.input').html('<input type="text" id="iiccontent" class="input firstinput" placeholder="type your message" />')
           });
     }
 
