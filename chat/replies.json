@@ -58,6 +58,258 @@
         "BigO of Binary Search O(log N)",
         "Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half."
       ]
+    },
+    {
+      "tag": "Merge",
+      "patterns": [
+        "Merge Sort",
+        "BigO of Merge Sort"
+      ],
+      "responses": [
+        "Merge Sort is a sorting algorithm based on divide and conquer approach, and it divides the array in half, continuously cuts down a list into multiple sublists until each has only one item, then merges those sublists into a sorted list.",
+        "BigO of Merge Sort O(N log(N))"
+      ]
+    },
+    {
+      "tag": "Bubble",
+      "patterns": [
+        "Bubble Sort",
+        "BigO of Bubble Sort"
+      ],
+      "responses": [
+        "Bubble Sort is a sorting algorithm that compares two adjacent elements and swaps them until they are in order and sorted.",
+        "BigO of Bubble Sort O(N^2)"
+      ]
+    },
+    {
+      "tag": "Insertion",
+      "patterns": [
+        "Insertion Sort",
+        "BigO of Insertion Sort"
+      ],
+      "responses": [
+        "Insertion Sort is a sorting algorithm that continously insert each element from an unsorted subarray into a sorted subarray.",
+        "BigO of Insertion Sort O(N^2)"
+      ]
+    },
+    {
+      "tag": "Selection",
+      "patterns": [
+        "Selection Sort",
+        "BigO of Selection Sort"
+      ],
+      "responses": [
+        "Selection Sort is a sorting algorithm based on comparison and it adds one element in each iteration. The algorithm selects the smallest element in the array and move it to the beginning of the array by swapping with the first element.",
+        "BigO of Selection Sort O(N^2)"
+      ]
+    },
+    {
+      "tag": "Heap",
+      "patterns": [
+        "Heap Sort",
+        "BigO of Heap Sort"
+      ],
+      "responses": [
+        "Heap sort is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.",
+        "BigO of Heap Sort O(N log(N))"
+      ]
+    },
+    {
+      "tag": "section number",
+      "patterns": [
+        "section number of class",
+        "What's the section number of this class?",
+        "section number"
+      ],
+      "responses": [
+        "The section number is 001 For Tues/Thurs and 002 for Mon/Wedn."
+      ]
+    },
+    {
+      "tag": "class time",
+      "patterns": [
+        "class times",
+        "What time are the classes?",
+        "What time is my class?"
+      ],
+      "responses": [
+        "8:30-9:45 am Mon/Wedn ECSS 2.306 and 8:30-9:45 am Tues/Thurs HH 2.502."
+      ]
+    },
+    {
+      "tag": "office hours",
+      "patterns": [
+        "Where's the professor's office?",
+        "When are the professor's office hours?",
+        "When and where are office hours?",
+        "office hours"
+      ],
+      "responses": [
+        "ECSS 4.320 from 11:30 pm to 1:30 pm on Tues & Thurs"
+      ]
+    },
+    {
+      "tag": "pre-requisites",
+      "patterns": [
+        "prerequisites",
+        "pre-requisites",
+        "What are the pre-requisites for this class?",
+        "What are the co-requisites?"
+      ],
+      "responses": [
+        "CS 3305 with C or better, and CE/CS/SE/TE 3345"
+      ]
+    },
+    {
+      "tag": "learning",
+      "patterns": [
+        "course learning",
+        "What's the class about?",
+        "What will we be learning in this class"
+      ],
+      "responses": [
+        "Asymptomatic analysis, recurrences,graph algorithms, and compitational complexity. Algorithm design techniques: greedy, method, dynamic programming, divide-and-conquer."
+      ]
+    },
+    {
+      "tag": "textbooks",
+      "patterns": [
+        "What textbooks do we need",
+        "What books are required for the class?",
+        "textbooks needed"
+      ],
+      "responses": [
+        "Cormen T.H., Leiserson C.E., Rivest R.L., and Stein C., Introduction to Algorithms, 3rd ed., ISBN: 978-0262033848"
+      ]
+    },
+    {
+      "tag": "exam 1",
+      "patterns": [
+        "When's exam 1?",
+        "When's the first exam",
+        "exam 1 date",
+        "first exam date"
+      ],
+      "responses": [
+        "September 27"
+      ]
+    },
+    {
+      "tag": "exam 2",
+      "patterns": [
+        "When's exam 2?",
+        "When's the second exam?",
+        "exam 2 date",
+        "second exam date"
+      ],
+      "responses": [
+        "November 1"
+      ]
+    },
+    {
+      "tag": "final exam",
+      "patterns": [
+        "When's the final exam?",
+        "When's exam 3?",
+        "final exam date",
+        "exam 3 date"
+      ],
+      "responses": [
+        "Decemeber 13"
+      ]
+    },
+    {
+      "tag": "lowest score dropped",
+      "patterns": [
+        "Will the lowest hw score be dropped?",
+        "Will there be a curve?",
+        "dropping lowest grade"
+      ],
+      "responses": [
+        "Lowest assignment score will be dropped. Students should not expect bonuses, make-ups, or other droped scores. Curving is not guaranteed"
+      ]
+    },
+    {
+      "tag": "worth",
+      "patterns": [
+        "How much is exam 1 worth?",
+        "How much is exam 2 worth?",
+        "How much is the final exam worth?",
+        "How much is the homework worth?",
+        "How much are the quizzes and participation worth?"
+      ],
+      "responses": [
+        "Exam 1 is worth 20%.",
+        "Exam 2 is worth 25%.",
+        "Exam 3/the final is worth 25%.",
+        "Homework assignments are worth 20%.",
+        "Quizzes and participation is worth 10%."
+      ]
+    },
+    {
+      "tag": "exam located",
+      "patterns": [
+        "Where are the exams located?",
+        "Will the exams be in class?",
+        "Where will the exams be held?"
+      ],
+      "responses": [
+        "All 3 exams will be in the Testing Center. Students MUST register/reserve seats at least 72 hours before the exam"
+      ]
+    },
+    {
+      "tag": "make up exam",
+      "patterns": [
+        "Will there be make up exams?",
+        "Can I take a make up exam?"
+      ],
+      "responses": [
+        "Make up exams can be administered only for extreme circumstances like hospitalization or road accidents. Proof of incidence is required to request a make up exam."
+      ]
+    },
+    {
+      "tag": "late homework",
+      "patterns": [
+        "Can homework be turned in late?",
+        "What's the penalty for late homework?",
+        "What's the penalty for late submission?",
+        "How many points are deducted for late homework?"
+      ],
+      "responses": [
+        "Late submissions will be accepted, but 10% of total score will be deducted. Submissions later than 48 hours will receive a 0."
+      ]
+    },
+    {
+      "tag": "quizzes",
+      "patterns": [
+        "When will the quizzes be?",
+        "How many times can the quiz be taken?",
+        "Do the quizzes count as participation?"
+      ],
+      "responses": [
+        "Available in E-learning multiple times throughout the semester.",
+        "Multiple times.",
+        "These quizzes aren't graded, but participation credit will be given if quizzes are attempted."
+      ]
+    },
+    {
+      "tag": "attendance",
+      "patterns": [
+        "Will there be a grade for attendance?",
+        "Is attendance mandatory?"
+      ],
+      "responses": [
+        "Regular and punctual class atendance is expected. Participation quizzes will be used to calculate participation credit."
+      ]
+    },
+    {
+      "tag": "log",
+      "patterns": [
+        "log (n) vs log (n^2)"
+      ],
+      "responses": [
+        "log (n) is the best time case complexity"
+      ]
     }
   ]
 }
