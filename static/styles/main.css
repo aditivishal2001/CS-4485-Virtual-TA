@@ -24,7 +24,10 @@ body {
 .chatbox {
     position: absolute;
     bottom: 0px;
-    right: 30px;
+right: 30px;
+left: 30px;
+top: 120px;
+
 }
 
 /* CONTENT IS CLOSE */
@@ -123,8 +126,8 @@ font-weight: 100;
 
 .chatbox__support {
   background: #f9f9f9;
-height: 450px;
-width: 350px;
+  height: 100%;
+  width: 100%;
 box-shadow: 0px 0px 15px rgb(0 0 0 / 10%);
 border-radius: 20px;
 }
@@ -144,10 +147,10 @@ box-shadow: var(--primaryBoxShadow);
 
 .chatbox__image--header {
     margin-right: 10px;
-    width: 25% !important
+    width: 5% !important
 }
 .chatbox__content--header{
-  width: 75% !important
+  width: 95% !important
 }
 
 .chatbox__heading--header {
@@ -186,6 +189,8 @@ box-shadow: var(--primaryBoxShadow);
     border-bottom-left-radius: 20px;
     background: var(--primary);
     color: white;
+
+
 }
 
 /* FOOTER */
@@ -203,9 +208,10 @@ box-shadow: var(--primaryBoxShadow);
 }
 .otherinput{
       padding: 3px 0px 6px 0px!important;
+      margin-left: 10px;
 }
 .firstinput{
-    padding: 6px 0px 6px 10px !important;
+    padding: 19px 0px 19px 10px !important;
 }
 div.input{
 display:flex;
@@ -213,16 +219,25 @@ flex-wrap: nowrap;
     white-space: nowrap;
 background: aliceblue;
 width: 100%;
-max-width: 275px;
+height: 55px;
+align-items: center;
 overflow: scroll;
 }
 .chatbox__footer .input {
 
     border: none;
-    padding: 6px 5px;
     text-align: left;
 
 }
+.chatbox__footer .input input {
+
+    border: none;
+    text-align: left;
+    padding: 12px 5px;
+    width:100%
+
+}
+
 
 span.input[contenteditable] {
   width: auto;
